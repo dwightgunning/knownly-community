@@ -1,2 +1,5 @@
+*.pyc
 .build/
 .deploy/
+bower_components/
+static/css/*.css
