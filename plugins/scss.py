@@ -1,3 +1,4 @@
+import codecs
 import os
 import sys
 import pipes
@@ -21,17 +22,17 @@ except:
 	sys.exit("Could not find pyScss, please install: sudo easy_install pyScss")
 
 
-CSS_PATH = 'static/css'
+CSS_PATH = './static/css'
 
 for path in fileList(CSS_PATH):
 	
 	if not path.endswith('.scss'):
 		continue
 	
-	with open(path, 'r') as f:
+	with codecs.open(path, 'r', 'utf-8') as f:
 		data = f.read()
 	
 	css = Scss().compile(data)
 
-	with open(path.replace('.scss', '.css'), 'w') as f:
+	with codecs.open(path.replace('.scss', '.css'), 'w', 'utf-8') as f:
 		f.write(css)
