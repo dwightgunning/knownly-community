@@ -3,3 +3,4 @@
 .deploy/
 bower_components/
 static/css/*.css
+config.json.local
