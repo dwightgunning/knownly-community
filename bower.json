@@ -1,0 +1,20 @@
+{
+  "name": "community.knownly.net",
+  "version": "0.0.1",
+  "authors": [
+    "Dwight Gunning <dwight@dwightgunning.com>"
+  ],
+  "description": "Knownly.net community site",
+  "keywords": [
+    "knownly"
+  ],
+  "license": "MIT",
+  "homepage": "http://community.knownly.net",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
