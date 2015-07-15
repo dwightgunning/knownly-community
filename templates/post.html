@@ -1,0 +1,71 @@
+{% extends "base.html" %}
+
+{% block title %}{{ title }} | Knownly{% endblock title %}
+
+{% block css_head %}
+  {{ block.super}}
+  <link href="{% static '/css/blog.css' %}" rel="stylesheet">
+{% endblock %}
+
+{% block content %}
+<div id="support" class="container content">
+	<div class="div col-md-8 col-md-offset-2">
+		<header id="header">
+			<a id="title" href="{% url '/blog/' %}">Knownly Blog</a>
+		</header>
+
+		<article class="post">
+			<header>
+				<h1>{{ title }}</h1>
+				<h2 class="headline">{{ headline }} </h2>
+			</header>
+			<section id="post-body">
+				{% block body %}
+					This is where the post contents is.
+				{% endblock body %}
+			</section>
+			
+			<div id="post-meta" class="clearfix">
+				<div><span>Posted on </span> {{ date|date:"M j" }}</div>
+				<div><span>Written by</span> {{ author }}</div>
+
+				<section id="sharing">
+					<a class="twitter" href="https://twitter.com/share" target="blank"><span class="fa fa-2x fa-twitter"></span></a>
+
+					<a class="facebook" href="#" 
+					  onclick="
+					    window.open(
+					      'https://www.facebook.com/sharer/sharer.php?u='+encodeURIComponent(location.href), 
+					      'facebook-share-dialog', 
+					      'width=626,height=436'); 
+					    return false;"><span class="fa fa-2x fa-facebook"></span> 
+					</a>
+
+				</section> 
+			</div> 
+		</article>
+
+		<div class="blog-footer">
+			<nav id="post-nav">
+				<span class="prev">
+					{% if prevPost %}
+						<a href='/{{ prevPost.path }}'>
+							<span class="arrow">&larr;</span> {{ prevPost.title }}
+						</a>
+					{% endif %}
+				</span>
+				
+
+				<span class="next">
+					{% if nextPost %}
+						<a href='/{{ nextPost.path }}'>
+							{{ nextPost.title }} <span class="arrow">&rarr;</span>
+						</a>
+					{% endif %}
+				</span>
+			</nav>
+		</div>
+	</div>
+</div>
+
+{% endblock content %}

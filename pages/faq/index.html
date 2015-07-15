@@ -1,18 +1,18 @@
 {% extends 'base.html' %}
 
-{% block title %}Support | Knownly{% endblock %}
+{% block title %}FAQ | Knownly{% endblock %}
 
 {% block css_head %}
   {{ block.super}}
-  <link href="{% static '/css/support.css' %}" rel="stylesheet">
+  <link href="{% static '/css/faq.css' %}" rel="stylesheet">
 {% endblock %}
 
 {% block body_attrs %}id="page-top" data-spy="scroll" data-target=".navbar-fixed-top"{% endblock %}
 
 {% block content %}
-<div id="support" class="container content">
+<div id="faq" class="container content">
   <div class="container">
-    <h1>Support</h1>
+    <h1>Frequently Asked Questions</h1>
     {% if messages %}        
       <div class="masthead">      
           {% for message in messages %}

@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+
+{% block title %}Blog | Knownly{% endblock %}
+
+{% block css_head %}
+  {{ block.super}}
+  <link href="{% static '/css/blog.css' %}" rel="stylesheet">
+{% endblock %}
+
+{% block content %}
+<div id="blog" class="container content">
+	<div class="div col-md-6 col-md-offset-3">
+	    <h1>Knownly Blog</h1>
+
+		<ul id="archive-list">
+			{% for post in posts %}
+				    {% ifchanged %}<h2 class="month">{{ post.date|date:"F Y" }}</h2>{% endifchanged %}
+			<li>
+				<a href='{{ post.path }}'><aside class="dates">{{ post.date|date:"M j" }}</aside></a>
+				<a href='{{ post.path }}'>{{ post.title }}</a>
+			</li>
+			{% endfor %}
+		</ul> <!--post-list-->
+	</div>
+</div>
+{% endblock %}
