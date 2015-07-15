@@ -20,7 +20,7 @@
 		        <h3>Gallery</h3>
 		        <p>See what's possible and get inspired by great websites hosted at Knownly.</p>
 				<hr/>
-		        <a href="{% url '/gallery/' %}" class="btn btn-primary" role="button">Browse the gallery</a>
+		        <a id="thumbnail-link-btn-gallery" href="{% url '/gallery/' %}" class="btn btn-primary" role="button">Browse the gallery</a>
 		      </div>
 		    </div>
 		  </div>
@@ -31,7 +31,7 @@
 		        <h3>Guides</h3>
 		        <p>Explainers and step-by-step walkthroughs for everybody from beginners to pro.</p>
 		        <hr/>
-		        <a href="{% url '/guides/' %}" class="btn btn-primary" role="button">Check the guides</a>
+		        <a id="thumbnail-link-btn-guides" href="{% url '/guides/' %}" class="btn btn-primary" role="button">Check the guides</a>
 		      </div>
 		    </div>
 		  </div>
@@ -44,7 +44,7 @@
 		        <h3>Discussion</h3>
 		        <hr/>
 		        <p>Engage the community for advice, tips and tricks.</p>
-		        <a href="https://www.facebook.com/groups/knownly/?ref=knownly-community-homepage" target="_blank" class="btn btn-primary" role="button">Join the discussion</a>
+		        <a id="thumbnail-link-btn-discuss" href="https://www.facebook.com/groups/knownly/?ref=knownly-community-homepage" target="_blank" class="btn btn-primary" role="button">Join the discussion</a>
 		      </div>
 		    </div>
 		  </div>
@@ -55,7 +55,7 @@
 		        <h3>Support</h3>
 		        <p>Reach out for one-on-one assistance.</p>
 		        <hr/>
-		        <a href="mailto:info@knownly.net?subject=Support%20request" target="_blank" class="btn btn-primary" role="button">Ask for support</a>
+		        <a id="thumbnail-link-btn-support" href="mailto:info@knownly.net?subject=Support%20request" target="_blank" class="btn btn-primary" role="button">Ask for support</a>
 		      </div>
 		    </div>
 		  </div>
@@ -63,4 +63,14 @@
     </div>
   </div>
 </div>
+{% endblock %}
+
+{% block js_footer %}
+	{{ block.super }}
+	<script>
+        mixpanel.track_links("#thumbnail-link-btn-gallery", "Gallery link clicked (Community:Landing Page)");
+        mixpanel.track_links("#thumbnail-link-btn-guides", "Guides link clicked (Community:Landing Page)");
+        mixpanel.track_links("thumbnail-link-btn-discuss", "Discuss link clicked (Community:Landing Page)");
+        mixpanel.track_links("#thumbnail-link-btn-support", "Support link clicked (Community:Landing Page)");
+    </script>
 {% endblock %}

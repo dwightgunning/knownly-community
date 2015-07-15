@@ -9,7 +9,8 @@ def preBuildPage(page, context, data):
     # Any changes you make to context will be passed to the template renderer for this page.
 
     extra = {
-        "CURRENT_PAGE": page
+        "CURRENT_PAGE": page,
+        "MIXPANEL_TOKEN": page.site.config.get('mixpanel-token', '')
         # Add your own dynamic context elements here!
     }
 
