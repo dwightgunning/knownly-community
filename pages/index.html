@@ -2,14 +2,64 @@
 
 {% block title %}Community | Knownly{% endblock %}
 
+{% block css_head %}
+  <link href="{% static 'css/homepage.css' %}" rel="stylesheet">
+{% endblock %}
+
 {% block content %}
 <div class="container content">
-  <div class="container">
-    <h1>Community</h1>
-    <div class="row">
-	    <div class="col-md-12">
-	    Welcome.
-	    </div>
+  <div class="container text-center">
+    <div class="col-md-12 text-center">
+	    <h1>Community</h1>
+	    <p class="lead">Get started, learn and teach, grow together.</p>
+	    <div class="row">
+		  <div class="col-sm-6 col-md-6">
+		    <div class="thumbnail">
+		      <i class="fa fa-5x fa-picture-o"></i>
+		      <div class="caption">
+		        <h3>Gallery</h3>
+		        <p>See what's possible and get inspired by great websites hosted at Knownly.</p>
+				<hr/>
+		        <a href="{% url '/gallery/' %}" class="btn btn-primary" role="button">Browse the gallery</a>
+		      </div>
+		    </div>
+		  </div>
+		  <div class="col-sm-6 col-md-6">
+		    <div class="thumbnail">
+		      <i class="fa fa-5x fa-file-text"></i>
+		      <div class="caption">
+		        <h3>Guides</h3>
+		        <p>Explainers and step-by-step walkthroughs for everybody from beginners to pro.</p>
+		        <hr/>
+		        <a href="{% url '/guides/' %}" class="btn btn-primary" role="button">Check the guides</a>
+		      </div>
+		    </div>
+		  </div>
+		</div>
+		<div class="row">
+		  <div class="col-sm-6 col-md-6">
+		    <div class="thumbnail">
+		      <i class="fa fa-5x fa-comments"></i>
+		      <div class="caption">
+		        <h3>Discussion</h3>
+		        <hr/>
+		        <p>Engage the community for advice, tips and tricks.</p>
+		        <a href="https://www.facebook.com/groups/knownly/?ref=knownly-community-homepage" target="_blank" class="btn btn-primary" role="button">Join the discussion</a>
+		      </div>
+		    </div>
+		  </div>
+		  <div class="col-sm-6 col-md-6">
+		    <div class="thumbnail">
+		      <i class="fa fa-5x fa-support"></i>
+		      <div class="caption">
+		        <h3>Support</h3>
+		        <p>Reach out for one-on-one assistance.</p>
+		        <hr/>
+		        <a href="mailto:info@knownly.net?subject=Support%20request" target="_blank" class="btn btn-primary" role="button">Ask for support</a>
+		      </div>
+		    </div>
+		  </div>
+		</div>
     </div>
   </div>
 </div>
