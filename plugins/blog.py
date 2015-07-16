@@ -54,7 +54,7 @@ def preBuild(site):
 			if page.site.url:
 				postContext['path'] = '%s/%s' % (page.site.url, page.path)
 			else:
-				postContext['path'] = page.path
+				postContext['path'] = '/%s' % page.path
 			postContext['body'] = getNode(get_template(page.path), name="body")
 
 			# Parse the date into a date object
