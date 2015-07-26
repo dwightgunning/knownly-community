@@ -1,0 +1,32 @@
+title: The right tool for the job
+author: Dwight Gunning
+date: 16-07-2015
+headline: Keeping it simple
+
+{% extends "post.html" %}
+{% block body %}
+
+{% filter markdown %}
+When starting work on a new website, refreshing an old design, or adding new content to an existing site, it is always worth considering the tools we'll be using.
+
+Should I stick with what I know? Should I try learning something new which might save time in the long run?
+
+Should I make the extra investment in a more complex solution up to gain greater flexibility over the long term? Rather, should I just work quickly now and accept that I'll probably need to do some extra work later on?
+
+The truth is that there's no right answer for all situations.
+
+Yet there is certainly a lot to be gained from making a wise choice over a sub-optimal choice. Usually the right answer becomes clear mid-way through when things are either running smoothly or we're stuck dealing with things that could have been avoided.
+
+Software engineers often use the [YAGNI](https://en.wikipedia.org/wiki/You_aren%27t_gonna_need_it) (You Aren't Gonna Need It) principal when making decisions. In short, it's about investing effort when it is absolutely needed, rather than ahead of time.
+
+The obvious yet still hard-won experience is that audience facing elements of a website are more important than the enabling technologies. At the end of the day we make websites to connect and engage with people. Keeping the YAGNI prinicple in mind can help us make better websites, faster.
+
+The thinking behind Knownly is that much of the technology behind websites is uncessary overhead. Certainly in the very beginning and quite often for well established websites that are rich in content and super popular.
+
+No matter how a website is created, it will be based on HTML, often supported by CSS and Javascript. These are technologies that been around since the beginning and will remain with the web for a long long time to come. They're also directly related to the design and functionality that your vistors interact with. In short, *you are going to need it* so it makes sense to learn to work with these technologies to achieve your desired results. The best thing is that they're not too complicated and there are plenty of ways to learn.
+
+On the other hand, many other technologies that are commonly involved in a working website have next to no impact on the design, features, and content our visitors interact with. Webserver, databases, scripts, FTPing files, backups, security updates are all extras that are often considered necessary but in reality are not. Given *you are not going to need it*, it makes sense to delay and if possible forever avoid these things.
+
+That's exactly where Knownly applies and why it's often the right tool for the job.
+{% endfilter %}
+{% endblock body %}
