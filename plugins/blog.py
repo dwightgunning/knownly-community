@@ -3,7 +3,7 @@ import datetime
 import logging
 
 ORDER = 999
-POSTS_PATH = 'posts/'
+POSTS_PATH = 'blog/'
 POSTS = []
 
 from django.template import Context
@@ -32,8 +32,10 @@ def preBuild(site):
 	for page in site.pages():
 		if page.path.startswith(POSTS_PATH):
 
-			# Skip non html posts for obious reasons
-			if not page.path.endswith('.html'):
+			# Skip the index and non html guides
+			if page.path.endswith('index.html') or \
+					page.path.endswith('archive.html') or \
+					not page.path.endswith('.html'):
 				continue
 
 			# Find a specific defined variable in the page context,
@@ -51,6 +53,8 @@ def preBuild(site):
 			postContext['headline'] = find('headline')
 			postContext['author'] = find('author')
 			postContext['date'] = find('date')
+			postContext['img_src'] = find('img_src')
+			postContext['img_attr'] = find('img_attr')
 			if page.site.url:
 				postContext['path'] = '%s/%s' % (page.site.url, page.path)
 			else:
