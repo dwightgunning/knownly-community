@@ -20,6 +20,10 @@
 				<h2 class="headline">{{ headline }} </h2>
 			</header>
 			<section id="post-body">
+				<div class="thumbnail with-caption">
+					<img src="{% static img_src %}" />
+					<div class="caption text-right">{{ img_attr|safe }}</div>
+				</div>
 				{% block body %}
 					This is where the post contents is.
 				{% endblock body %}
