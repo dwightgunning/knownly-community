@@ -413,26 +413,10 @@ h2.month {
   color: #5694f1;
 }
 
-/* Media Queries */
-@media screen and (max-width: 540px) {
-  #header { margin-bottom: 60px; border-bottom: 1px solid #eee; }
-  .post { margin: 40px 0; }
-  #footer { margin-top: 60px; }
-
-  #post-list, #archive-list { margin-top: 0; }
-  #post-meta { margin-top: 20px; }
-
-  #title { font-size: 17px; }
-  #post-list .dates { display: none; }
-
-  #post-list-footer { margin-top: 20px; padding-top: 40px; }
-
-  h1 { font-size: 26px; }
-  .post h2.headline { font-size: 20px; }
-}
-
-#support > div > article > header > h2 {
-  margin-bottom: 5px;
+.content-frame {
+  background: $grayscale-dark;
+  border-radius: 5px;
+  padding: 10px;
 }
 
 .thumbnail {
@@ -456,5 +440,35 @@ h2.month {
       width: 100%;
       text-align: right;
       display: inline-block;
+    }
   }
+}
+
+@media (min-width: 768px) {
+
+  .content-frame {
+    background-color: $grayscale-lightest;
+  }
+}
+
+/* Media Queries */
+@media screen and (max-width: 540px) {
+  #header { margin-bottom: 60px; border-bottom: 1px solid #eee; }
+  .post { margin: 40px 0; }
+  #footer { margin-top: 60px; }
+
+  #post-list, #archive-list { margin-top: 0; }
+  #post-meta { margin-top: 20px; }
+
+  #title { font-size: 17px; }
+  #post-list .dates { display: none; }
+
+  #post-list-footer { margin-top: 20px; padding-top: 40px; }
+
+  h1 { font-size: 26px; }
+  .post h2.headline { font-size: 20px; }
+}
+
+#support > div > article > header > h2 {
+  margin-bottom: 5px;
 }
