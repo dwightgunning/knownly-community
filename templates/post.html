@@ -1,8 +1,9 @@
 {% extends "base.html" %}
 
-
-{% block title %}{{ title }} | Blog | Knownly Community{% endblock %}
-{% block og_title %}{{ title }} | Blog | Knownly Community{% endblock %}
+{% block description %}{{ headline }}{% endblock %}
+{% block author %}{{ author }}{% endblock %}
+{% block og_title %}{{ title }}{% endblock %}
+{% block og_description %}{{ headline }}{% endblock %}
 
 {% block css_head %}
   {{ block.super}}
