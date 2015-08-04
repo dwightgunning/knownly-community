@@ -1,6 +1,10 @@
 {% extends "base.html" %}
 
-{% block title %}{{ title }} | Knownly{% endblock title %}
+{% block title %}{{ title }} | Guides | Knownly Community{% endblock %}
+{% block description %}{{ headline }}{% endblock %}
+{% block author %}{{ author }}{% endblock %}
+{% block og_title %}{{ title }}{% endblock %}
+{% block og_description %}{{ headline }}{% endblock %}
 
 {% block css_head %}
   {{ block.super}}
@@ -9,7 +13,7 @@
 
 {% block content %}
 <div id="support" class="container content">
-	<div class="div col-md-8 col-md-offset-2">
+	<div class="div col-md-8 col-md-offset-2 content-frame">
 		<header id="header">
 			<a id="title" href="{% url '/guides/' %}">Knownly guides</a>
 		</header>

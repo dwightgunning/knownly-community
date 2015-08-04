@@ -1,13 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+  <head prefix="og: http://ogp.me/ns#">
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="canonical" href="https://www.knownly.net/community{% current_page %}" />
-    <meta name="description" content="{% block description %}Knownly. Turn a Dropbox folder into a website. Make it known.{% endblock %}">
+    <meta name="description" content="{% block description %}Get started, learn and teach, grow together.{% endblock %}">
     <meta name="author" content="{% block author %}{% endblock %}">
     <link rel="shortcut icon" href="{% static 'img/favicon.ico' %}">
+
+    <!-- Open Graph tags -->
+    <meta property="og:title" content="{% block og_title %}Knownly Community{% endblock %}" />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="{% static 'img/brand/Knownly_Logo_Bubble_Device_255_x_255.png' %}" />
+    <meta property="og:url" content="https://www.knownly.net/community{% current_page %}" />
+    <meta property="og:description" content="{% block og_description %}Get started, learn and teach, grow together.{% endblock %}" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:image:width" content="255">
+    <meta property="og:image:height" content="255">
+    <meta property="og:site_name" content="Knownly Community" />
 
     <title>{% block title %}{% endblock %}</title>
 
