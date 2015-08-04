@@ -2,15 +2,28 @@
 
 {% block title %}Guides | Knownly{% endblock %}
 
-{% block content %}
-<div class="container content">
-  <div class="container">
-    <h1>Guides</h1>
-    <div class="row">
-      <div class="col-md-12">
-      Coming soon.
-      </div>
-    </div>
-  </div>
-</div>
+{% block css_head %}
+  {{ block.super}}
+  <link href="{% static '/css/guides.css' %}" rel="stylesheet">
 {% endblock %}
+
+{% block content %}
+    <div id="guides" class="container content">
+        <div class="div col-md-12">
+            <h1>Knownly Guides</h1>
+            <div class="row">
+                {% for guide in guides %}
+                    <div class="col-xs-12 col-sm-6 col-md-3">
+                        <div class="thumbnail">
+                            <img src="{% static guide.img_src %}" alt="...">
+                            <div class="caption">
+                                <h3><a href="{{ guide.path }}">{{ guide.title }} <br /><small>{{ guide.author }}</small></a></h3>
+                                <p>{{ guide.headline }}</p>
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+{% endblock content %}

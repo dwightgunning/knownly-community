@@ -41,11 +41,11 @@ def preBuild(site):
 			# Find a specific defined variable in the page context,
 			# and throw a warning if we're missing it.
 			def find(name):
-				c = page.context()
-				if not name in c:
+				pageContext = page.context()
+				if not name in pageContext:
 					logging.info("Missing info '%s' for post %s" % (name, page.path))
 					return ''
-				return c.get(name, '')
+				return pageContext.get(name, '')
 
 			# Build a context for each post
 			postContext = {}
@@ -59,7 +59,7 @@ def preBuild(site):
 				postContext['path'] = '%s/%s' % (page.site.url, page.path)
 			else:
 				postContext['path'] = '/%s' % page.path
-			postContext['body'] = getNode(get_template(page.path), name="body")
+			postContext['body'] = getNode(get_template(page.path), page.context(), name="body")
 
 			# Parse the date into a date object
 			try:
