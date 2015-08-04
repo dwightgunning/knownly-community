@@ -5,15 +5,28 @@
 {% block og_title %}Knownly Gallery{% endblock %}
 {% block og_description %}Knownly Community gallery{% endblock %}
 
-{% block content %}
-<div class="container content">
-  <div class="container">
-    <h1>Gallery</h1>
-    <div class="row">
-      <div class="col-md-12">
-      Coming soon.
-      </div>
-    </div>
-  </div>
-</div>
+{% block css_head %}
+  {{ block.super}}
+  <link href="{% static '/css/gallery.css' %}" rel="stylesheet">
 {% endblock %}
+
+{% block content %}
+    <div id="gallery" class="container content">
+        <div class="div col-md-12">
+            <h1>Knownly Gallery</h1>
+            <div class="row">
+                {% for gallery_site in gallery_sites %}
+                    <div class="col-xs-12 col-sm-6 col-md-3 gallery-site-thumbnails">
+                        <div class="thumbnail">
+                            <img src="{% static gallery_site.img_src %}">
+                            <div class="caption">
+                                <h3><a href="{{ gallery_site.path }}">{{ gallerysite.title }} <br /><small>{{ gallery_site.author }}</small></a></h3>
+                                <p>{{ gallery_site.headline }}</p>
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+{% endblock content %}

@@ -1,0 +1,79 @@
+{% extends "base.html" %}
+
+{% block title %}{{ title }} | Gallery | Knownly Community{% endblock %}
+{% block description %}{{ headline }}{% endblock %}
+{% block author %}{{ author }}{% endblock %}
+{% block og_title %}{{ title }}{% endblock %}
+{% block og_description %}{{ headline }}{% endblock %}
+
+{% block css_head %}
+  {{ block.super}}
+  <link href="{% static '/css/gallery.css' %}" rel="stylesheet">
+{% endblock %}
+
+{% block content %}
+<div id="support" class="container content">
+	<div class="div col-md-8 col-md-offset-2 content-frame">
+		<header id="header">
+			<a id="title" href="{% url '/gallery/' %}">Knownly gallery</a>
+		</header>
+
+		<article class="gallery-site">
+			<header>
+				<h1>{{ title }}</h1>
+				<h2 class="headline">{{ headline }} </h2>
+			</header>
+			<section id="gallery-site-body">
+				<div class="thumbnail with-caption">
+					<img src="{% static img_src %}" />
+					<div class="caption text-right">{{ img_attr|safe }}</div>
+				</div>
+				{% block body %}
+					This is where the gallery site content is.
+				{% endblock body %}
+			</section>
+			
+			<div id="gallery-site-meta" class="clearfix">
+				<div><span>Published on </span> {{ date }}</div>
+				<div><span>Written by</span> {{ author }}</div>
+
+				<section id="sharing">
+					<a class="twitter" href="https://twitter.com/share" target="blank"><span class="fa fa-2x fa-twitter"></span></a>
+
+					<a class="facebook" href="#" 
+					  onclick="
+					    window.open(
+					      'https://www.facebook.com/sharer/sharer.php?u='+encodeURIComponent(location.href), 
+					      'facebook-share-dialog', 
+					      'width=626,height=436'); 
+					    return false;"><span class="fa fa-2x fa-facebook"></span> 
+					</a>
+
+				</section> 
+			</div> 
+		</article>
+
+		<div class="gallery-site-footer">
+			<nav id="gallery-site-nav">
+				<span class="prev">
+					{% if prevgallerysites %}
+						<a href='/{{ prevgallerysites.path }}'>
+							<span class="arrow">&larr;</span> {{ prevgallerysites.title }}
+						</a>
+					{% endif %}
+				</span>
+				
+
+				<span class="next">
+					{% if nextgallerysites %}
+						<a href='/{{ nextgallerysites.path }}'>
+							{{ nextgallerysites.title }} <span class="arrow">&rarr;</span>
+						</a>
+					{% endif %}
+				</span>
+			</nav>
+		</div>
+	</div>
+</div>
+
+{% endblock content %}
