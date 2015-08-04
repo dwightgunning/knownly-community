@@ -409,6 +409,19 @@ h2.month {
 	color: #5694f1;
 }
 
+.content-frame {
+  background: $grayscale-dark;
+  border-radius: 5px;
+  padding: 10px;
+}
+
+@media (min-width: 768px) {
+
+  .content-frame {
+    background-color: $grayscale-lightest;
+  }
+}
+
 /* Media Queries */
 @media screen and (max-width: 540px) {
 	#header { margin-bottom: 60px; border-bottom: 1px solid #eee; }
