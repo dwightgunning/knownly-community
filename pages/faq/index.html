@@ -13,14 +13,6 @@
 <div id="faq" class="container content">
   <div class="container">
     <h1>Frequently Asked Questions</h1>
-    {% if messages %}        
-      <div class="masthead">      
-          {% for message in messages %}
-              <div class="alert alert-public {{ message.tags }}">{{ message|safe }}</div>
-          {% endfor %}
-      </div>
-    {% endif %}
-
     <div id="getting-started" class="panel-group" id="accordion">
       <div class="panel panel-default">
         <div class="panel-heading">

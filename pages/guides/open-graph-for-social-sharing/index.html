@@ -1,0 +1,79 @@
+title: Open Graph tags for Social Sharing
+author: Dwight Gunning
+date: 26-07-2015
+headline: Setting up for fast and effective sharing on Facebook and Twitter.
+img_src: guides/open-graph-for-social-sharing/img/open_graph_logo.png
+img_attr: <a href="http://ogp.me/">Open Graph</a></em>
+
+{% extends "guide.html" %}
+{% block body %}
+
+{% filter markdown %}
+Have you ever pasted a link into a Facebook status update and needed to adjust the Headline or the image? Some links show relevant titles and images while others don't explain the link at all.
+
+It comes down to the use of [Open Graph](http://ogp.me/) meta tags which are hidden from view inside the source of the page that's being sharing. Both Facebook and Twitter look for and make use of these tags whenever somebody shares your pages.
+
+You'll want to get these settings right to make the most of the effort and help out your fans who are sharing your site. 
+
+In this guide we'll give a quick walkthrough on adding a set of appropriate tags to a _bio_ website.
+
+First, you'll need to insert the Open Graph namespace prefix into your `HTML` or `HEAD` tag.
+
+	<html prefix="og: http://ogp.me/ns#">
+		...
+	</html>
+
+OR:
+
+	<html>
+		<head prefix="og: http://ogp.me/ns#"> 
+			... 
+		</head>
+		...
+	</html>
+
+From there it is mandatory to add the following four Open Graph properties:
+
+ * `og:title`
+ * `og:type`
+ * `og:image`
+ * `og:url`
+
+The setup for the meta tag is:
+
+	<meta property="og:[[ property name ]]" content="[[ property value ]]" />
+
+There are a range of other properties that are option according to the [Open Graph](http://ogp.me/) spec, but really should be included for optimal sharing.
+
+Here's the set of meta tags I use for my personal bio:
+
+	<!-- Required open graph fields ... -->
+	<meta property="og:title" content="Dwight Gunning" />
+	<meta property="og:type" content="profile" />
+	<meta property="og:image" content="/img/dwight_amsterdam_tcr_square.png" />
+	<meta property="og:url" content="http://www.dwightgunning.com" />
+
+	<!-- Optional open graph fields ... -->
+	<meta property="og:description" content="Technology, software and travel." />
+	<meta property="og:locale" content="en_GB" />
+	<meta property="og:locale:alternate" content="en_US" />
+	<meta property="profile:first_name" content="Dwight" />
+	<meta property="profile:last_name" content="Gunning" />
+	<meta property="profile:username" content="dwightgunning" />
+	<meta property="og:image:width" content="255">
+	<meta property="og:image:height" content="255">
+	<meta property="og:site_name" content="Dwight Gunning" />
+
+This [example](http://www.dwightgunning.com) brings it all together.
+
+Once the tags are in, you and your visitors should start to see something like this when sharing your pages on Facebook:
+
+![Facebook sharing with Open Graph tags]({% static '/guides/open-graph-for-social-sharing/img/facebook_sharing.png' %} "Facebook makes use relevant Open Graph tags when sharing")
+
+One final tip: Facebook have a handy [Open Graph debugger](https://developers.facebook.com/tools/debug/og/object/) where you can check your tags are set just right.
+
+So that's it. It's just a couple minutes work to improve your site's shareability!
+
+{% endfilter %}
+
+{% endblock body %}
