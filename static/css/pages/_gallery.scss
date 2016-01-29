@@ -1,11 +1,9 @@
-@import "static/css/simple.scss";
-
 /* Typography */
 /*Accent color*/
 a, 
 #title,
-#guides-list a:hover,
-#guides-list li:hover .dates,
+#gallery-list a:hover,
+#gallery-list li:hover .dates,
 #title:hover {
 	text-decoration: none; 
 	color: $grayscale-primary-dark;
@@ -21,8 +19,8 @@ p a {
 
 /*Transitions*/
 a,
-#guides-nav a,
-#guides-list a	{ 
+#gallery-nav a,
+#gallery-list a	{ 
 	-webkit-transition: all 0.15s ease;
 	-moz-transition: all 0.15s ease;
 	-ms-transition: all 0.15s ease;
@@ -63,18 +61,18 @@ h2 {
 	color: $grayscale-medium;
 }
 
-.guides h1 {
+.gallery h1 {
 	margin-bottom: 10px;
 }
 
-.guides h2 {
+.gallery h2 {
 	margin-bottom:2 0px;
 	color: inherit;
 	font-size: 18px;
 	font-weight: 400;
 }
 
-.guides h2.headline {
+.gallery h2.headline {
 	font-style: italic;
 	font-size: 16px;
 	color: $grayscale-medium;
@@ -94,7 +92,7 @@ h6 {
 	margin-bottom: 6px;
 }
 
-.guides {
+.gallery {
 	p {
 		font-size: 17px;
 		line-height:1.9;
@@ -201,13 +199,13 @@ h6 {
 
 }
 
-/* guides List */
-#guides-list, #archive-list {
+/* gallery List */
+#gallery-list, #archive-list {
 	margin-top: 100px;
 	padding-left: 0;
 }
 
-#guides-list {
+#gallery-list {
 
 	li,#archive-list li {
 		list-style-type: none;
@@ -239,7 +237,7 @@ h6 {
 	}
 }
 
-#guides-list-footer {
+#gallery-list-footer {
 	border-top: 1px solid #eee;
 	margin-top: 20px;
 	padding-top: 40px;
@@ -272,16 +270,16 @@ h6 {
 	margin-top: 100px;
 }
 
-/* guides Page */
+/* gallery Page */
 #header {
 	border-bottom: 1px solid #eee;
 }
 
-.guides {
+.gallery {
 	margin: 20px 0 0 0;
 }
 
-#guide-meta {
+#gallery-site-meta {
 	font-size: 13px;
 	font-weight: bold;
 	line-height: 1.4;
@@ -292,13 +290,13 @@ h6 {
 	color:#444;
 }
 
-#guide-meta div span {
+#gallery-site-meta div span {
 	color: #aaa;
 	font-weight: 500;
 	display: block;
 }
 
-#guide-meta div {
+#gallery-site-meta div {
 	margin: 0 25px 0 0;
 	float: left;
 }
@@ -322,8 +320,8 @@ h6 {
 	color: $grayscale-primary-dark;
 }
 
-/* guides Navigation */
-#guidess-nav {
+/* gallery Navigation */
+#gallerys-nav {
 	border-top:1px solid #eee;
 	text-align:center;
 	padding-top:20px;
@@ -331,7 +329,7 @@ h6 {
 	font-weight:500;
 }
 
-#guides-nav span {
+#gallery-nav span {
 	-webkit-transition: all 0.1s linear;
 	-moz-transition: all 0.1s linear;
 	-ms-transition: all 0.1s linear;
@@ -340,32 +338,32 @@ h6 {
 	position: relative;
 }
 
-#guides-nav span.prev {
+#gallery-nav span.prev {
 	float: left;
 }
 
-#guides-nav span.next {
+#gallery-nav span.next {
 	float: right;
 }
 
-#guides-nav span .arrow {
+#gallery-nav span .arrow {
 	position: relative;
 	padding: 1px;
 }
 
-#guides-nav span.prev:hover .arrow {
+#gallery-nav span.prev:hover .arrow {
 	left: -4px;
 }
 
-#guides-nav span.next:hover .arrow {
+#gallery-nav span.next:hover .arrow {
 	right: -4px;
 }
 
-#guides-nav span.prev:hover {
+#gallery-nav span.prev:hover {
 	left: -3px;
 }
 
-#guides-nav span.next:hover {
+#gallery-nav span.next:hover {
 	right: -3px;
 }
 
@@ -425,22 +423,22 @@ h2.month {
 /* Media Queries */
 @media screen and (max-width: 540px) {
 	#header { margin-bottom: 60px; border-bottom: 1px solid #eee; }
-	.guides { margin: 40px 0; }
+	.gallery { margin: 40px 0; }
 	#footer { margin-top: 60px; }
 
-	#guides-list, #archive-list { margin-top: 0; }
-	#guide-meta { margin-top: 20px; }
+	#gallery-list, #archive-list { margin-top: 0; }
+	#gallery-site-meta { margin-top: 20px; }
 
 	#title { font-size: 17px; }
-	#guides-list .dates { display: none; }
+	#gallery-list .dates { display: none; }
 
-	#guides-list-footer { margin-top: 20px; padding-top: 40px; }
+	#gallery-list-footer { margin-top: 20px; padding-top: 40px; }
 
 	h1 { font-size: 26px; }
-	.guides h2.headline { font-size: 20px; }
+	.gallery h2.headline { font-size: 20px; }
 }
 
-.guide-thumbnails {
+.gallery-site-thumbnails {
 
 	.thumbnail {
 		min-height: 480px;

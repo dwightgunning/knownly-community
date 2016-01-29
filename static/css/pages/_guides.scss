@@ -1,11 +1,9 @@
-@import "static/css/simple.scss";
-
 /* Typography */
 /*Accent color*/
 a, 
 #title,
-#gallery-list a:hover,
-#gallery-list li:hover .dates,
+#guides-list a:hover,
+#guides-list li:hover .dates,
 #title:hover {
 	text-decoration: none; 
 	color: $grayscale-primary-dark;
@@ -21,8 +19,8 @@ p a {
 
 /*Transitions*/
 a,
-#gallery-nav a,
-#gallery-list a	{ 
+#guides-nav a,
+#guides-list a	{ 
 	-webkit-transition: all 0.15s ease;
 	-moz-transition: all 0.15s ease;
 	-ms-transition: all 0.15s ease;
@@ -63,18 +61,18 @@ h2 {
 	color: $grayscale-medium;
 }
 
-.gallery h1 {
+.guides h1 {
 	margin-bottom: 10px;
 }
 
-.gallery h2 {
+.guides h2 {
 	margin-bottom:2 0px;
 	color: inherit;
 	font-size: 18px;
 	font-weight: 400;
 }
 
-.gallery h2.headline {
+.guides h2.headline {
 	font-style: italic;
 	font-size: 16px;
 	color: $grayscale-medium;
@@ -94,7 +92,7 @@ h6 {
 	margin-bottom: 6px;
 }
 
-.gallery {
+.guides {
 	p {
 		font-size: 17px;
 		line-height:1.9;
@@ -201,13 +199,7 @@ h6 {
 
 }
 
-/* gallery List */
-#gallery-list, #archive-list {
-	margin-top: 100px;
-	padding-left: 0;
-}
-
-#gallery-list {
+#guides-list {
 
 	li,#archive-list li {
 		list-style-type: none;
@@ -239,7 +231,7 @@ h6 {
 	}
 }
 
-#gallery-list-footer {
+#guides-list-footer {
 	border-top: 1px solid #eee;
 	margin-top: 20px;
 	padding-top: 40px;
@@ -272,16 +264,16 @@ h6 {
 	margin-top: 100px;
 }
 
-/* gallery Page */
+/* guides Page */
 #header {
 	border-bottom: 1px solid #eee;
 }
 
-.gallery {
+.guides {
 	margin: 20px 0 0 0;
 }
 
-#gallery-site-meta {
+#guide-meta {
 	font-size: 13px;
 	font-weight: bold;
 	line-height: 1.4;
@@ -292,13 +284,13 @@ h6 {
 	color:#444;
 }
 
-#gallery-site-meta div span {
+#guide-meta div span {
 	color: #aaa;
 	font-weight: 500;
 	display: block;
 }
 
-#gallery-site-meta div {
+#guide-meta div {
 	margin: 0 25px 0 0;
 	float: left;
 }
@@ -322,8 +314,8 @@ h6 {
 	color: $grayscale-primary-dark;
 }
 
-/* gallery Navigation */
-#gallerys-nav {
+/* guides Navigation */
+#guidess-nav {
 	border-top:1px solid #eee;
 	text-align:center;
 	padding-top:20px;
@@ -331,7 +323,7 @@ h6 {
 	font-weight:500;
 }
 
-#gallery-nav span {
+#guides-nav span {
 	-webkit-transition: all 0.1s linear;
 	-moz-transition: all 0.1s linear;
 	-ms-transition: all 0.1s linear;
@@ -340,32 +332,32 @@ h6 {
 	position: relative;
 }
 
-#gallery-nav span.prev {
+#guides-nav span.prev {
 	float: left;
 }
 
-#gallery-nav span.next {
+#guides-nav span.next {
 	float: right;
 }
 
-#gallery-nav span .arrow {
+#guides-nav span .arrow {
 	position: relative;
 	padding: 1px;
 }
 
-#gallery-nav span.prev:hover .arrow {
+#guides-nav span.prev:hover .arrow {
 	left: -4px;
 }
 
-#gallery-nav span.next:hover .arrow {
+#guides-nav span.next:hover .arrow {
 	right: -4px;
 }
 
-#gallery-nav span.prev:hover {
+#guides-nav span.prev:hover {
 	left: -3px;
 }
 
-#gallery-nav span.next:hover {
+#guides-nav span.next:hover {
 	right: -3px;
 }
 
@@ -425,22 +417,22 @@ h2.month {
 /* Media Queries */
 @media screen and (max-width: 540px) {
 	#header { margin-bottom: 60px; border-bottom: 1px solid #eee; }
-	.gallery { margin: 40px 0; }
+	.guides { margin: 40px 0; }
 	#footer { margin-top: 60px; }
 
-	#gallery-list, #archive-list { margin-top: 0; }
-	#gallery-site-meta { margin-top: 20px; }
+	#guides-list, #archive-list { margin-top: 0; }
+	#guide-meta { margin-top: 20px; }
 
 	#title { font-size: 17px; }
-	#gallery-list .dates { display: none; }
+	#guides-list .dates { display: none; }
 
-	#gallery-list-footer { margin-top: 20px; padding-top: 40px; }
+	#guides-list-footer { margin-top: 20px; padding-top: 40px; }
 
 	h1 { font-size: 26px; }
-	.gallery h2.headline { font-size: 20px; }
+	.guides h2.headline { font-size: 20px; }
 }
 
-.gallery-site-thumbnails {
+.guide-thumbnails {
 
 	.thumbnail {
 		min-height: 480px;

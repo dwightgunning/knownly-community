@@ -5,13 +5,8 @@
 {% block og_title %}{{ title }}{% endblock %}
 {% block og_description %}{{ headline }}{% endblock %}
 
-{% block css_head %}
-  {{ block.super}}
-  <link href="{% static '/css/blog.css' %}" rel="stylesheet">
-{% endblock %}
-
 {% block content %}
-<div id="support" class="container content">
+<div id="post">
 	<div class="div col-md-8 col-md-offset-2 content-frame">
 		<header id="header">
 			<a id="title" href="{% url '/blog/' %}">Knownly Blog</a>

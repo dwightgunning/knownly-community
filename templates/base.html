@@ -23,61 +23,55 @@
     <title>{% block title %}{% endblock %}</title>
 
     {% block css_head %}
-      <link href="{% static 'css/simple.css' %}" rel="stylesheet">
-    {% endblock %}
-
-    {% block js_head %}
-      <!--[if lt IE 9]>
-        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-      <![endif]-->
+      <link href="{% static 'css/knownly.css' %}" rel="stylesheet">
     {% endblock %}
   </head>
 
   <body {% block body_attrs %}{% endblock %}>
     <nav class="navbar navbar-custom navbar-fixed-top" role="navigation">
       <div class="container">
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-main-collapse">
-            <i class="fa fa-bars"></i>
-          </button>
-          <a id="navbar-brand-logo"class="navbar-brand page-scroll" href="//www.knownly.net">
-            <img class="brand-logo-dark" src="{% static 'img/brand/Knownly_Logo_Web_Simple_140_x_40.png' %}" />
-          </a>
-        </div>
+        <div class="row">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-main-collapse">
+              <i class="fa fa-bars"></i>
+            </button>
+            <a id="navbar-brand-logo"class="navbar-brand page-scroll" href="//www.knownly.net">
+              <img class="brand-logo-dark" src="{% static 'img/brand/Knownly_Logo_Web_Simple_140_x_40.png' %}" />
+            </a>
+          </div>
 
-        <div class="collapse navbar-collapse navbar-right navbar-main-collapse">
-          <ul class="nav navbar-nav">
-            <li class="hidden">
-              <a href="#page-top"></a> <!-- removes .active on first li when scrolling -->
-            </li>
-            <li>
-              <a id="navbar-item-blog" href="{% url '/blog/' %}">Blog</a>
-            </li>
-            <li>
-              <a id="navbar-item-gallery" href="{% url '/gallery/' %}">Gallery</a>
-            </li>
-            <li>
-              <a id="navbar-item-guides" href="{% url '/guides/' %}">Guides</a>
-            </li>
-            <li>
-              <a id="navbar-item-discuss" href="https://www.facebook.com/groups/knownly/?ref=knownly-community-navbar" target="_blank">Discuss</a>
-            </li>
-            <li>
-              <a id="navbar-item-support" href="mailto:info@knownly.net?subject=Support%20request" target="_blank">Support</a>
-            </li>
-            <li>
-              <a id="navbar-item-join" href="https://www.knownly.net/signup/">Join Knownly</a>
-            </li>
-          </ul>
+          <div class="collapse navbar-collapse navbar-right navbar-main-collapse">
+            <ul class="nav navbar-nav">
+              <li class="hidden">
+                <a href="#page-top"></a> <!-- removes .active on first li when scrolling -->
+              </li>
+              <li>
+                <a id="navbar-item-blog" href="{% url '/blog/' %}">Blog</a>
+              </li>
+              <li>
+                <a id="navbar-item-gallery" href="{% url '/gallery/' %}">Gallery</a>
+              </li>
+              <li>
+                <a id="navbar-item-guides" href="{% url '/guides/' %}">Guides</a>
+              </li>
+              <li>
+                <a id="navbar-item-discuss" href="https://www.facebook.com/groups/knownly/?ref=knownly-community-navbar" target="_blank">Discuss</a>
+              </li>
+              <li>
+                <a id="navbar-item-support" href="mailto:info@knownly.net?subject=Support%20request" target="_blank">Support</a>
+              </li>
+              <li>
+                <a id="navbar-item-join" href="https://www.knownly.net/signup/">Join Knownly</a>
+              </li>
+            </ul>
+          </div>
         </div>
-        <!-- /.navbar-collapse -->
       </div>
-      <!-- /.container -->
     </nav>
 
-    
-    {% block content %}{% endblock %}
+    <div class="container content">
+      {% block content %}{% endblock %}
+    </div>
 
     <footer>
       <div class="footer">
