@@ -2,7 +2,7 @@
 
 The Knownly Community website.
 
-This respository contains the source code behind the Knonwly Community at https://www.knownly.net/community
+This respository contains the source code behind the Knownly Community at https://www.knownly.net/community
 
 The source is made available to everybody for several reasons:
 - The ambition is to make the Knownly Community as open and inclusive as possible.
@@ -71,3 +71,7 @@ cactus serve
 6. Note the shell output and grab the URL from which Cactus is serving the website. Point web browser at it.
 
 7. Bingo!
+
+## License
+
+This content of this work is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License. The underlying source code used to format and display that content is licensed under the MIT License. These are set out in the [license statement]](../master/LICENSE.md).
