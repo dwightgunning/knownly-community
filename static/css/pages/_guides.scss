@@ -6,15 +6,15 @@ a,
 #guides-list li:hover .dates,
 #title:hover {
 	text-decoration: none; 
-	color: $grayscale-primary-dark;
+	color: $primary-dark;
 }
 
 p {
-	color: $grayscale-dark;
+	color: $dark;
 }
 
 p a {
-	color: $grayscale-primary;
+	color: $primary;
 }
 
 /*Transitions*/
@@ -38,7 +38,7 @@ em, i { font-style: italic; }
 	font-size: 19px;
 	margin: 0;
 	padding-bottom: 10px;
-	color: $grayscale-primary;
+	color: $primary;
 }
 
 .description {
@@ -51,14 +51,14 @@ em, i { font-style: italic; }
 h1 {
 	font-size: 30px;
 	letter-spacing: -1px;
-	color: $grayscale-primary;
+	color: $primary;
 	font-weight: bold;
 }
 
 h2 {
 	font-style: italic;
 	font-size: 19px;
-	color: $grayscale-medium;
+	color: $medium;
 }
 
 .guides h1 {
@@ -75,7 +75,7 @@ h2 {
 .guides h2.headline {
 	font-style: italic;
 	font-size: 16px;
-	color: $grayscale-medium;
+	color: $medium;
 	margin: -5px 0 40px 0;
 }
 
@@ -215,7 +215,7 @@ h6 {
 	}
 
 	a {
-		color: $grayscale-primary;
+		color: $primary;
 		display: block;
 		font-size: 22px;
 		font-weight: 500;
@@ -305,13 +305,13 @@ h6 {
 	font-size: 23px;
 	margin-left: 1px;
 	margin-top: 4px;
-	color: $grayscale-primary;
+	color: $primary;
 	display: inline-block;
 	vertical-align: middle;
 }
 
 #sharing a:hover {
-	color: $grayscale-primary-dark;
+	color: $primary-dark;
 }
 
 /* guides Navigation */
@@ -385,7 +385,7 @@ h2.month {
 	display: block;
 	font-size: 17px/1.7;
 	font-weight: 500;
-	color: $grayscale-primary;
+	color: $primary;
 }
 
 #archive-list .dates {
@@ -402,7 +402,7 @@ h2.month {
 }
 
 .content-frame {
-  background: $grayscale-dark;
+  background: $dark;
   border-radius: 5px;
   padding: 10px;
 }
@@ -410,7 +410,7 @@ h2.month {
 @media (min-width: 768px) {
 
   .content-frame {
-    background-color: $grayscale-lightest;
+    background-color: $lightest;
   }
 }
 
