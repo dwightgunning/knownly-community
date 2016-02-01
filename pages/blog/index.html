@@ -6,23 +6,17 @@
 {% block og_description %}Knownly Community blog{% endblock %}
 
 {% block content %}
-	<div id="blog" class="container content">
-		<div class="div col-md-6 col-md-offset-3">
-		    <h1>Knownly Blog</h1>
-			<ul id="post-list">
-				{% for post in posts|slice:":5" %}
-					<li>
-						<a href='{{ post.path }}'><aside class="dates">{{ post.date|date:"M j" }}</aside></a>
-						<a href='{{ post.path }}'>{{ post.title }} <h2>{{ post.headline }}</h2></a>
-					</li>
-				{% endfor %}
-			</ul>
-
-			{% if posts|length > 5 %}
-				<div id="post-list-footer">
-					<a id="archive-link" href="{% url '/blog/archive.html' %}"> <span class="arrow">&larr;</span> Archive</a>
-				</div>
-			{% endif %}
-		</div>
-	</div>
+  <div id="blog" class="container content">
+    <div class="div col-md-6 col-md-offset-3">
+      <h1>Knownly Blog</h1>
+      <ul class="post-list">
+        {% for post in posts %}
+          <li>
+            <a href='{{ post.path }}'><aside class="dates">{{ post.date|date:"M j" }}</aside></a>
+            <a href='{{ post.path }}'>{{ post.title }} <h2>{{ post.headline }}</h2></a>
+          </li>
+        {% endfor %}
+      </ul>
+    </div>
+  </div>
 {% endblock content %}
