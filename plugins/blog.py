@@ -55,10 +55,7 @@ def preBuild(site):
 			postContext['date'] = find('date')
 			postContext['img_src'] = find('img_src')
 			postContext['img_attr'] = find('img_attr')
-			if page.site.url:
-				postContext['path'] = '%s/%s' % (page.site.url, page.path)
-			else:
-				postContext['path'] = '/%s' % page.path
+			postContext['path'] = '%s/%s' % (page.site.url or '', page.path)
 			postContext['body'] = getNode(get_template(page.path), page.context(), name="body")
 
 			# Parse the date into a date object
