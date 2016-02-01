@@ -1,0 +1,215 @@
+title: Set up a contact form on your static site
+author: Robin Berghuijs
+date: 31-01-2016
+headline: I’ll show you how to set up a contact form using formspree.io
+img_src: guides/set-up-formspree-contact-form/img/formspree_logo.png
+img_attr: <a href="http://formspree.io/">Formspree</a></em>
+
+{% extends "guide.html" %}
+
+{% block css_head %}
+  {{ block.super }}
+  <link href="{% static '/css/zenburn.css' %}" rel="stylesheet">
+  <link href="{% static 'guides/set-up-formspree-contact-form/css/contact-form.css' %}" rel="stylesheet">
+{% endblock %}
+
+{% block js_footer %}
+    {{ block.super }}
+    <script src="{% static 'guides/set-up-formspree-contact-form/js/classie.js' %}"></script>
+    <script src="{% static 'guides/set-up-formspree-contact-form/js/contact-form.js' %}"></script>
+{% endblock %}
+
+{% block body %}
+
+{% filter markdown:"fenced-code-blocks" %}
+There have been [many articles](https://www.mobomo.com/2014/01/static-web-rising/) saying static website are the [next big thing](https://www.smashingmagazine.com/2015/11/modern-static-website-generators-next-big-thing/). While it’s hard to quantify the rise of static websites, they do seem to be getting more popular. Any for good reason, too: they’re fast, they’re safe, and they’re increasingly easy to use and set up.
+
+However, their greatest selling point—being static—can also be a problem when you want to do something dynamic: like adding a comments section, selling products, or even just setting up a simple contact form. Enter [formspree.io](http://formspree.io/). You can set your form’s action to submit to formspree, and they’ll handle the form submission and forward the form data to you by email. That makes it almost trivial to set up a contact form. In this post, I’ll walk through some of the steps to set up the comment form, using several popular static site generators.
+
+We’ll be using three different static site generators: [Pelican](http://blog.getpelican.com/) (my weapon of choice), [Jekyll](http://jekyllrb.com/), and [Hexo](https://hexo.io/). These are some of the most popular ones and incidentally, they cover three different languages: Python, Ruby, and Javascript. So let’s dive in!
+
+##Create a Contact page
+
+First off, let’s create a contact page. If you’ve already done this, you can [skip ahead](#set-up-formspree-io-form) to the forms.
+
+Using Pelican, it's as easy as creating or dropping a new file into the `content/pages` directory. Name the file `contact.md` and it will turn up in your pages as ‘contact’. Make sure you’ve installed support for markdown with `pip install markdown`! You could also use .rst or .html—the contact form itself will be html, which will work fine in markdown and html files. Give your new page the attributes you want, of which title is the only thing that’s required:
+
+```markdown
+Title: Contact
+Slug: contact
+Lang: en
+
+Put some content here.
+```
+{% endfilter %}
+{% filter markdown:"fenced-code-blocks" %}
+
+Your file will initially be available in your output folder as contact.html. However, in your pelicanconf.py you can set the URLs of pages with the following settings:
+
+```python
+PAGE_URL = '{slug}/'
+PAGE_SAVE_AS = '{slug}/index.html'
+```
+{% endfilter %}
+{% filter markdown:"fenced-code-blocks" %}
+
+For more information on writing Pelican pages, check out the [Pelican docs](http://docs.getpelican.com/en/3.6.3/content.html).
+
+Using Jekyll, do the same, but create a new directory called `contact` and put `index.md` inside of it. This will ensure that your new page is available at yourdomain.com/contact/, which looks very nice! In your new file, put:
+
+{% endfilter %}
+{% filter markdown:"fenced-code-blocks" %}
+
+```yaml
+---
+layout: default
+title: Contact
+---
+```
+
+{% endfilter %}
+{% filter markdown:"fenced-code-blocks" %}
+
+With Hexo, we’ll use the command line. To create a new page, simply run: `hexo new page contact`. In the contact page, which is available at `contact/index.md`, the following should already be present:
+
+```yaml
+---
+title: contact
+date: 2016-01-15 18:01:32
+---
+```
+
+<h2 id="set-up-formspree-io-form">Set up the formspree.io form</h2>
+
+{% endfilter %}
+{% filter markdown:"fenced-code-blocks" %}
+
+Let’s head on over to [formspree](https://formspree.io//) and check out the contact form. They provide the basics up top, which is:
+
+```html
+<form action="//formspree.io/your@email.com" method="POST">
+    <input type="text" name="name">
+    <input type="email" name="_replyto">
+    <input type="submit" value="Send">
+</form>
+```
+
+{% endfilter %}
+{% filter markdown:"fenced-code-blocks" %}
+
+You can just copy this into your new page, underneath what we had before. A great thing about markdown is that you can just put html in it.
+
+This is okay, but we can do better. Scroll down the formspree page and you’ll see some more options. Let’s add a message field, a so-called ‘gotcha’-field to avoid spam, and a reply-to-field:
+
+```html
+<form action="//formspree.io/your@email.com" method="POST">
+    <input type="text" name="name">
+    <input type="email" name="_replyto">
+    <textarea name="message"></textarea>
+
+    <input type="text" name="_gotcha" style="display:none">
+    <input type="hidden" name="_subject" value="Message via http://domain.com">
+
+    <input type="submit" value="Send">
+</form>
+```
+
+{% endfilter %}
+{% filter markdown:"fenced-code-blocks" %}
+
+At this point, your contact form should already work. Fire up a server and check it out!
+
+For pelican, run `pelican path/to/your/content/ -s pelicanconf.py -r` and either navigate to your output folder, or go to your output folder and run `python -m http.server` and navigate to `localhost:8000/contact/`.
+
+For Jekyll, run `jekyll serve` and go to `localhost:4000/contact/`.
+
+For Hexo, run `hexo server` and go to `localhost:4000/contact/`.
+
+Try out your form! You’ll have to confirm your email, and it should work on your local machine as well as in production.
+
+##Add more HTML5 goodness
+Getting better, but still not quite there. We can improve functionality with HTML5. We can group fields with `fieldset`, use `<label>` tags to clarify which field is which, add `placeholder`-attributes to input fields to make the form even clearer, and add `required`-attributes to input fields to help with validation:
+
+```html
+<form action="//formspree.io/email@domain.com" method="POST">
+    <fieldset>
+        <label for="name">Your name</label><br>
+        <input type="text" name="name" placeholder="Name" required>
+    </fieldset>
+    <fieldset>
+        <label for="_replyto">Your email</label><br>
+        <input type="email" name="_replyto" placeholder="example@domain.com" required>
+    </fieldset>
+    <fieldset>
+        <label for="message">Your message</label><br>
+        <textarea name="message" rows="1" placeholder="Message" required></textarea>
+    </fieldset>
+    <input class="hidden" type="text" name="_gotcha" style="display:none">
+    <input class="hidden" type="hidden" name="_subject" value="Message via http://domain.com">
+
+    <input class="button submit" type="submit" value="Send">
+</form>
+```
+
+{% endfilter %}
+{% filter markdown:"fenced-code-blocks" %}
+
+##Style your contact form
+I won’t go into full detail on the styling since that’s a whole other topic, but check out this excellent [Codrops post](http://tympanus.net/codrops/2015/01/08/inspiration-text-input-effects/) on text input effects. When I added classes and IDs to the form and its fields, I ended up with the following:
+
+```html
+<form class="form" id="contactform" action="//formspree.io/email@domain.com" method="POST">
+    <fieldset class="field">
+        <input class="input" type="text" name="name" placeholder="Name" required>
+        <label class="label" for="name"><span class="label-content">Your name</span></label>
+    </fieldset>
+    <fieldset class="field">
+        <input class="input" type="email" name="_replyto" placeholder="example@domain.com" required>
+        <label class="label" for="_replyto"><span class="label-content">Your email</span></label>
+    </fieldset>
+    <fieldset class="field">
+        <textarea class="input" name="message" rows="1" placeholder="Message" required></textarea>
+        <label class="label" for="message"><span class="label-content">Your message</span></label>
+    </fieldset>
+    <input class="hidden" type="text" name="_gotcha" style="display:none">
+    <input class="hidden" type="hidden" name="_subject" value="Message via http://domain.com">
+    <fieldset class="field">
+        <input class="button submit" type="submit" value="Send">
+    </fieldset>
+</form>
+```
+
+{% endfilter %}
+{% filter markdown:"fenced-code-blocks" %}
+
+You can copy the css I used [here](https://gist.github.com/Flobin/f46d4995a40a6b98dbeb). Keep in mind you’ll also need [classie.js](https://github.com/desandro/classie) and [the following javascript](https://gist.github.com/Flobin/f95c4227ab79dd87333b) for the effect to work fully.
+
+##Final product
+
+And this is what the final product looks like:
+
+<form class="form" id="contactform" action="//formspree.io/cd1c5968@opayq.com" method="POST" style="margin-bottom: 2rem;">
+    <fieldset class="field">
+        <input class="input" type="text" name="name" placeholder="Name" required>
+        <label class="label" for="name"><span class="label-content">Your name</span></label>
+    </fieldset>
+    <fieldset class="field">
+        <input class="input" type="email" name="_replyto" placeholder="example@domain.com" required>
+        <label class="label" for="_replyto"><span class="label-content">Your email</span></label>
+    </fieldset>
+    <fieldset class="field">
+        <textarea class="input" name="message" rows="1" placeholder="Message" required></textarea>
+        <label class="label" for="message"><span class="label-content">Your message</span></label>
+    </fieldset>
+    <input class="hidden" type="text" name="_gotcha" style="display:none">
+    <input class="hidden" type="hidden" name="_subject" value="Message via the formspree.io tutorial">
+    <fieldset class="field">
+        <input class="button submit" type="submit" value="Send">
+    </fieldset>
+</form>
+
+So there we go, we’ve set up a working contact form for our static site, which uses semantic HTML, and even looks great. I hope this guide helped you. If you have any questions or comments, let me know through the form, [my site](//robin.berghuijs.design/en/contact/) or [twitter](https://twitter.com/flobin)!
+
+{% endfilter %}
+
+{% endblock body %}
