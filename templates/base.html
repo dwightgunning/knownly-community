@@ -20,10 +20,10 @@
     <meta property="og:image:height" content="255">
     <meta property="og:site_name" content="Knownly Community" />
 
-    <title>{% block title %}{% endblock %}</title>
+    <title>{% block title %}Knownly Community{% endblock %}</title>
 
     {% block css_head %}
-      <link href="{% static 'css/knownly.css' %}" rel="stylesheet">
+      <link href="{% static '/css/knownly.css' %}" rel="stylesheet">
     {% endblock %}
   </head>
 
@@ -35,8 +35,8 @@
             <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-main-collapse">
               <i class="fa fa-bars"></i>
             </button>
-            <a id="navbar-brand-logo"class="navbar-brand page-scroll" href="//www.knownly.net">
-              <img class="brand-logo-dark" src="{% static 'img/brand/Knownly_Logo_Web_Simple_140_x_40.png' %}" />
+            <a id="navbar-brand-logo" class="navbar-brand" href="/">
+              <img class="brand-logo-dark" src="{% static '/img/brand/Knownly_Logo_Web_Simple_140_x_40.png' %}" />
             </a>
           </div>
 
@@ -49,9 +49,6 @@
                 <a id="navbar-item-blog" href="{% url '/blog/' %}">Blog</a>
               </li>
               <li>
-                <a id="navbar-item-gallery" href="{% url '/gallery/' %}">Gallery</a>
-              </li>
-              <li>
                 <a id="navbar-item-guides" href="{% url '/guides/' %}">Guides</a>
               </li>
               <li>
@@ -61,7 +58,7 @@
                 <a id="navbar-item-support" href="mailto:info@knownly.net?subject=Support%20request" target="_blank">Support</a>
               </li>
               <li>
-                <a id="navbar-item-join" href="https://www.knownly.net/signup/">Join Knownly</a>
+                <a id="navbar-item-join" class="primary" href="https://www.knownly.net/signup/">Join Knownly</a>
               </li>
             </ul>
           </div>
@@ -76,7 +73,15 @@
     <footer>
       <div class="footer">
         <div class="container text-center">
-          <p class="small">Handmade in Amsterdam. Copyright &copy; Knownly 2015.</p>
+          <p class="small"><strong><a href="https://github.com/Knownly/knownly-community">Click to contribute</a></strong></p>
+          <ul class="list-inline">
+            <li><img alt="Creative Commons" style="border-width:0" src="{% static '/img/license-badges/cc-by-nc-sa.png' %}"/></li>
+            <li><img alt="Open Source Institute" style="border-width:0" src="{% static '/img/license-badges/osi.png' %}" /></li>
+          </ul>
+          <p class="small">
+            This content of this work is licensed under the <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License</a>. The underlying source code used to format and display that content is licensed under the <a href="https://github.com/Knownly/knownly-community/blob/master/LICENSE.md">MIT license</a>.
+          </p>
+
         </div>
       </div>
     </footer>

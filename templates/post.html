@@ -1,24 +1,25 @@
 {% extends "base.html" %}
 
+{% block title %}{{ title }} | Guides | Knownly Community{% endblock %}
 {% block description %}{{ headline }}{% endblock %}
 {% block author %}{{ author }}{% endblock %}
 {% block og_title %}{{ title }}{% endblock %}
 {% block og_description %}{{ headline }}{% endblock %}
 
 {% block content %}
-<div id="post">
-	<div class="div col-md-8 col-md-offset-2 content-frame">
+<div class="div col-md-8 col-md-offset-2">
+	<div class="well">
 		<header id="header">
 			<a id="title" href="{% url '/blog/' %}">Knownly Blog</a>
 		</header>
 
-		<article class="post">
+		<article>
 			<header>
 				<h1>{{ title }}</h1>
 				<h2 class="headline">{{ headline }} </h2>
 			</header>
-			<section id="post-body">
-				<div class="thumbnail with-caption">
+			<section>
+				<div class="thumbnail article-thumbnail">
 					<img src="{% static img_src %}" />
 					<div class="caption text-right">{{ img_attr|safe }}</div>
 				</div>
@@ -31,7 +32,7 @@
 				<div><span>Posted on </span> {{ date }}</div>
 				<div><span>Written by</span> {{ author }}</div>
 
-				<section id="sharing">
+				<section class="sharing">
 					<a class="twitter" href="https://twitter.com/share" target="blank"><span class="fa fa-2x fa-twitter"></span></a>
 
 					<a class="facebook" href="#" 

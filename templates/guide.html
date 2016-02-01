@@ -7,68 +7,43 @@
 {% block og_description %}{{ headline }}{% endblock %}
 
 {% block content %}
-<div id="guide">
-	<div class="div col-md-8 col-md-offset-2 content-frame">
-		<header id="header">
-			<a id="title" href="{% url '/guides/' %}">Knownly guides</a>
-		</header>
+<div class="div col-md-8 col-md-offset-2">
+  <div class="well">
+    <header id="header">
+      <a id="title" href="{% url '/guides/' %}">Knownly guides</a>
+    </header>
 
-		<article class="guide">
-			<header>
-				<h1>{{ title }}</h1>
-				<h2 class="headline">{{ headline }} </h2>
-			</header>
-			<section id="guide-body">
-				<div class="thumbnail with-caption">
-					<img src="{% static img_src %}" />
-					<div class="caption text-right">{{ img_attr|safe }}</div>
-				</div>
-				{% block body %}
-					This is where the guides contents is.
-				{% endblock body %}
-			</section>
-			
-			<div id="guides-meta" class="clearfix">
-				<div><span>Published on </span> {{ date }}</div>
-				<div><span>Written by</span> {{ author }}</div>
+    <article>
+      <header>
+        <h1>{{ title }}</h1>
+        <h2 class="headline">{{ headline }} </h2>
+      </header>
+      <section>
+        <div class="thumbnail article-thumbnail">
+          <img src="{% static img_src %}" />
+          <div class="caption text-right">{{ img_attr|safe }}</div>
+        </div>
+        {% block body %}
+          This is where the guides contents is.
+        {% endblock body %}
+      </section>
 
-				<section id="sharing">
-					<a class="twitter" href="https://twitter.com/share" target="blank"><span class="fa fa-2x fa-twitter"></span></a>
+      <div id="guides-meta" class="clearfix">
+        <div><span>Published on </span> {{ date }}</div>
+        <div><span>Written by</span> {{ author }}</div>
 
-					<a class="facebook" href="#" 
-					  onclick="
-					    window.open(
-					      'https://www.facebook.com/sharer/sharer.php?u='+encodeURIComponent(location.href), 
-					      'facebook-share-dialog', 
-					      'width=626,height=436'); 
-					    return false;"><span class="fa fa-2x fa-facebook"></span> 
-					</a>
-
-				</section> 
-			</div> 
-		</article>
-
-		<div class="guides-footer">
-			<nav id="guides-nav">
-				<span class="prev">
-					{% if prevguides %}
-						<a href='/{{ prevguides.path }}'>
-							<span class="arrow">&larr;</span> {{ prevguides.title }}
-						</a>
-					{% endif %}
-				</span>
-				
-
-				<span class="next">
-					{% if nextguides %}
-						<a href='/{{ nextguides.path }}'>
-							{{ nextguides.title }} <span class="arrow">&rarr;</span>
-						</a>
-					{% endif %}
-				</span>
-			</nav>
-		</div>
-	</div>
+        <div class="sharing">
+          <a class="twitter" href="https://twitter.com/share" target="blank"><span class="fa fa-2x fa-twitter"></span></a>
+          <a class="facebook" href="#" onclick="
+              window.open(
+                'https://www.facebook.com/sharer/sharer.php?u='+encodeURIComponent(location.href),
+                'facebook-share-dialog',
+                'width=626,height=436');
+              return false;"><span class="fa fa-2x fa-facebook"></span>
+          </a>
+        </div>
+      </div>
+    </article>
+  </div>
 </div>
-
 {% endblock content %}
