@@ -1,0 +1,167 @@
+article {
+  margin: 20px 0 0 0;
+
+  .article-thumbnail {
+    display: inline-block;
+    background: #f4f4f4;
+    color: #999;
+    margin-bottom: 20px;
+
+    p {
+      margin: 0;
+      padding-top: 0.5em;
+    }
+
+    small:before {
+      content: '\2014 \00A0';
+    }
+
+    small {
+      width: 100%;
+      text-align: right;
+      display: inline-block;
+    }
+  }
+
+  h1 {
+    margin-bottom: 10px;
+  }
+
+  h2 {
+    margin-bottom:2 0px;
+    color: inherit;
+    font-size: 18px;
+    font-weight: 400;
+  }
+
+  h2.headline {
+    font-style: italic;
+    font-size: 16px;
+    color: #aaa;
+    margin: -5px 0 40px 0;
+  }
+
+  p {
+    font-size: 17px;
+    line-height:1.9;
+    letter-spacing: .125em;
+    margin-bottom: 25px;
+  }
+
+  p.small { 
+    color: #bbb; 
+    font-size: 14px; 
+    line-height: 1.5; 
+    display: block;
+  }
+
+  blockquote { 
+    padding-left: 15px; 
+    border-left: 3px solid #eee; 
+  }
+
+  hr {
+    display: block;
+    border: none;
+    height: 3px;
+    margin: 40px auto;
+    background: #f4f4f4;
+  }
+
+  span.code {
+    font-family:Menlo, Monaco, Courier;
+    background-color:#EEE;
+    font-size:14px;
+  }
+
+  ul {
+    margin-bottom: 25px;
+    padding:0;
+  }
+  li {
+    font-size: 17px;
+    line-height:1.9;
+    letter-spacing: .125em;
+    margin-left: 20px;
+    list-style-type:circle;
+    list-style-position:inside;
+  }
+
+  pre { 
+    font-family:Menlo, Monaco, Courier; 
+    white-space:pre-wrap; 
+    border: 1px solid #ddd; 
+    padding:20px; 
+    background-color:#fdfdfd; 
+    font-size:14px; 
+    overflow:auto; 
+    border-radius: 3px;
+  }
+
+  table {
+    width: 100%;
+    margin: 40px 0;
+    border-collapse: collapse;
+    font-size: 13px;
+    line-height: 1.5em; 
+  }
+
+  th,td {
+    text-align: left;
+    padding-right: 20px;
+    vertical-align: top;
+  }
+
+  table td,td {
+    border-spacing: none;
+    border-style: solid;
+    padding: 10px 15px;
+    border-width: 1px 0 0 0;  
+  }
+
+  tr>td {
+    border-top: 1px solid #eaeaea;
+  }
+
+  tr:nth-child(odd)>td {
+    background: #fcfcfc;
+  }
+
+  thead th,th {
+    text-align: left;
+    padding: 10px 15px;
+    height: 20px;
+    font-size: 13px;
+    font-weight: bold;
+    color: #444;
+    border-bottom: 1px solid #dadadc;
+    cursor: default;
+    white-space: nowrap;
+  }
+
+  img {
+    width: 100%;
+    max-width: 100%;
+    border-radius: 3px;
+  }
+
+  .sharing {
+    float: right;
+    margin: -2px;
+  }
+
+  .sharing a {
+    font-size: 20px;
+    font-size: 23px;
+    margin-left: 1px;
+    margin-top: 4px;
+    color: $primary;
+    display: inline-block;
+    vertical-align: middle;
+  }
+
+  .sharing a:hover {
+    color: $primary-dark;
+  }
+
+}

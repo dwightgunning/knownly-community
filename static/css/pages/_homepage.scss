@@ -1,11 +1,22 @@
 .lead {
-	margin-bottom: 45px;
+  margin-bottom: 45px;
 }
 
-.thumbnail {
-	padding: 20px;
+.card {
+  padding: 20px;
 }
 
 .fa {
-	color: $dark;
+  color: $dark;
+}
+
+.thumbnail {
+  padding: 20px;
+
+  .caption {
+    padding: 0px;
+    .caption-body p {
+      min-height: 75px;
+    }
+  }
 }
