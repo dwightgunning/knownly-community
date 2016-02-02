@@ -1,5 +1,6 @@
 article {
   margin: 20px 0 0 0;
+  -webkit-font-smoothing: antialiased;
 
   .article-thumbnail {
     display: inline-block;
@@ -24,28 +25,41 @@ article {
   }
 
   h1 {
-    margin-bottom: 10px;
+    font-family: "Lucida Grande","Lucida Sans Unicode","Lucida Sans",Geneva,Verdana,sans-serif;
+    font-weight: 700;
+    font-style: normal;
+    font-size: 36px;
+    line-height: 1.15;
+    letter-spacing: -0.02em;
+    margin-bottom: 5px;
   }
 
   h2 {
-    margin-bottom:2 0px;
-    color: inherit;
-    font-size: 18px;
-    font-weight: 400;
+    font-family: "Lucida Grande","Lucida Sans Unicode","Lucida Sans",Geneva,Verdana,sans-serif;
+    letter-spacing: -0.022em;
+    font-weight: 300;
+    font-style: normal;
+    font-size: 28px;
+    line-height: 1.22;
   }
 
   h2.headline {
-    font-style: italic;
-    font-size: 16px;
     color: #aaa;
-    margin: -5px 0 40px 0;
+    font-family: "Lucida Grande","Lucida Sans Unicode","Lucida Sans",Geneva,Verdana,sans-serif;
+    font-size: 17px;
+    font-weight: normal;
+    font-style: italic;
+    line-height: 1.5;
   }
 
   p {
-    font-size: 17px;
-    line-height:1.9;
-    letter-spacing: .125em;
-    margin-bottom: 25px;
+    font-family: Georgia,Cambria,"Times New Roman",Times,serif;
+    letter-spacing: .01rem;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 21px;
+    line-height: 1.58;
+    letter-spacing: -0.003em;
   }
 
   p.small { 
@@ -68,34 +82,23 @@ article {
     background: #f4f4f4;
   }
 
-  span.code {
-    font-family:Menlo, Monaco, Courier;
-    background-color:#EEE;
-    font-size:14px;
+  ul, ol {
+    font-size: 17px;
+    margin-bottom: 11px;
   }
 
-  ul {
-    margin-bottom: 25px;
-    padding:0;
-  }
-  li {
-    font-size: 17px;
-    line-height:1.9;
-    letter-spacing: .125em;
-    margin-left: 20px;
+  ul li {
     list-style-type:circle;
     list-style-position:inside;
   }
 
-  pre { 
-    font-family:Menlo, Monaco, Courier; 
-    white-space:pre-wrap; 
-    border: 1px solid #ddd; 
-    padding:20px; 
-    background-color:#fdfdfd; 
-    font-size:14px; 
-    overflow:auto; 
-    border-radius: 3px;
+  li {
+    font-size: 17px;
+    line-height:1.9;
+    letter-spacing: .125em;
+    line-height: 28px;
+    margin-bottom: 10px;
+    margin-left: 20px;
   }
 
   table {
