@@ -1,0 +1,112 @@
+title: Making a NowNowNow page
+author: Dwight Gunning
+date: 25-01-2016
+headline: Share the things that you're now focused on right now
+img_src: guides/nownownow/img/nownownow.jpg
+img_attr: <a href="https://www.nownownow.com">nownownow.com</a></em>
+
+{% extends "guide.html" %}
+
+{% block css_head %}
+  {{ block.super }}
+  <link href="{% static '/css/zenburn.css' %}" rel="stylesheet">
+{% endblock %}
+
+{% block body %}
+{% filter markdown:"fenced-code-blocks" %}
+_Now pages_ are a neat initiative started by [Greg Albritton](http://gregalbritton.com/now) and [Derek Sivers](https://sivers.org/now). They are a simple variation on the ubiquitous 'about' and 'contact' pages you see all over the web. The point of the 'now' page is to share what you're focussed on right now, at this stage of your life.
+
+For more of back-story and aims of the project, feel free to jump over to [nownownow.com](http://www.nownownow.com).
+
+This guide is written for folks who've never created a webpage from scratch but are keen to do so. It's 7 quick steps and take roughly 15 minutes.
+
+_If you're already up with Dropbox and Knownly you can skip to [Step 4](#now-page-template) and grab our 'now' page template._
+
+## 1. Sign up and install Dropbox
+
+First up you'll need to sign up for a Dropbox account and install the app so that all your website files will be automatically sent to "the cloud". With your website files in "the cloud", Knownly can make them accessible as a website.
+
+Just head over to [Dropbox](https://www.dropbox.com) to register.
+
+After you have your Dropbox account, you'll want to install the Dropbox app on your laptop or PC. Instructions should show up immediately after you register, but in case they don't, here's a [direct link](https://www.dropbox.com/install).
+
+## 2. Register with Knownly
+
+Knownly registration is simple:  All you'll be asked is to grant the Knownly service permission to setup a new area within your Dropbox where we can create a website folder that will hold your _now_ page. Then select your Knownly plan and you're up and running.
+
+Go <a href="https://www.knownly.net/signup" target="_blank">do it</a>.
+
+## 3. Create a Knownly Website
+
+After you've got your Knownly account, it's time to create your website.
+
+That's just a matter of deciding what domain you'd like to use, and the submitting it via the form in the Knownly console:
+
+![Create website form]({% static '/guides/nownownow/img/create_knownly_website.png' %} "Knownly Console")
+
+Shortly after receiving confirmation in the Knownly console that you're website has been created, a new folder for your website will be created within your Dropbox folder on your machine. Inside you'll see a placeholder file called "index.html".
+
+![Dropbox Recent Changes shows 'index.html']({% static '/guides/nownownow/img/dropbox_recent_changes.png' %} "Dropbox Recent Changes")
+
+You can type your chose website domain into your web browser and this HTML page will be displayed. Congratulations on getting the first page of your website online!
+
+## <a name="now-page-template"></a>4. Add the 'now' page template
+
+As you'll expect, we need to do some extra work to create a new 'now' page.
+
+To follow the 'now' page convention, we need to creat a page that will be accessible from a url that looks like: _http://mysite.knownly.net/now/_
+
+Knownly sites, like many websites, treat URLs that end in a '/' as a shorthand for the 'index.html' in the corresponding directory. This is often simply referred to as the "index" file for a website or website sub-directory. Whenever visitors use a URL that ends in '/', Knownly will look for and serve the file named 'index.html' in that directory.
+
+!['now' sub-directory and index.html ]({% static '/guides/nownownow/img/now_page_folder_structure.png' %} "Website structure")
+
+Now on to creating your now page:
+
+1. Create a sub-folder named 'now' within your Knownly website folder. It should sit along side the placeholder 'index.html' that was automatically generated for the website.
+2. Inside the 'now' folder, create a new file called index.html
+3. Add the HTML template so you can quickly test out your 'now' page:
+4. Check that you can view your new 'now' page in your browser at: _http://mysite.knownly.net/now/_
+
+```html
+<html>
+  <head>
+    <title></title>
+  </head>
+  <body>
+    <h1>My current status</h1>
+    <h2>Where am I now?</h2>
+      <p>...</p>
+    <h2>What am I reading?</h2>
+      <p>...</p>
+    <h2>What am I working on?</h2>
+      <p>...</p>
+    <h2>What do I look like?</h2>
+      <img src="me.png" alt="A photo of me">
+    <h2>What am I planning?</h2>
+      <p>...</p>
+    <hr>
+    <p><em>Last updated:</em> ...</p>
+  </body>
+</html>
+```
+
+Styling your 'now' page with CSS is the logical next step. That's a topic worthy of a separate guide (, several guides in fact). Right now, the best place to learn CSS is Codecademy's [HTML & CSS course](https://www.codecademy.com/en/tracks/htmlcss). Be sure to check it out some time.
+
+## 5. Fill in what you're up to right now
+
+This part is really up to you ;)
+
+## 6. Submit your 'now' page to the listing
+
+To get a listing, all you need to do follow [the instructions](http://nownownow.com/about/#hownow), which basically involves emailing Derek.
+
+> If you already have your own website with a /now page on it, as described and defined above, just email the URL to me at <derek@sivers.org>. After you do, I’ll email you back with a link to log in and answer a few questions, which, when done, will create a profile page for you.
+
+Don't forget to spread the word on Facebook, Twitter and emailing!
+
+## Wrapping up
+
+Now that you're all done, follow [nownownow on Twitter](https://twitter.com/nownownow) and keep an eye out for you profile to appear.
+
+{% endfilter %}
+{% endblock %}
