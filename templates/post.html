@@ -52,7 +52,7 @@
 			<nav id="post-nav">
 				<span class="prev">
 					{% if prevPost %}
-						<a href='/{{ prevPost.path }}'>
+						<a href='{% url prevPost.page.final_url %}'>
 							<span class="arrow">&larr;</span> {{ prevPost.title }}
 						</a>
 					{% endif %}
@@ -61,7 +61,7 @@
 
 				<span class="next">
 					{% if nextPost %}
-						<a href='/{{ nextPost.path }}'>
+						<a href='{% url nextPost.page.final_url %}'>
 							{{ nextPost.title }} <span class="arrow">&rarr;</span>
 						</a>
 					{% endif %}

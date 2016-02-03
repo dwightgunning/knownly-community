@@ -12,8 +12,8 @@
       <ul class="post-list">
         {% for post in posts %}
           <li>
-            <a href='{{ post.path }}'><aside class="dates">{{ post.date|date:"M j" }}</aside></a>
-            <a href='{{ post.path }}'>{{ post.title }} <h2>{{ post.headline }}</h2></a>
+            <a href='{% url post.page.final_url %}'><aside class="dates">{{ post.date|date:"M j" }}</aside></a>
+            <a href='{% url post.page.final_url %}'>{{ post.title }} <h2>{{ post.headline }}</h2></a>
           </li>
         {% endfor %}
       </ul>

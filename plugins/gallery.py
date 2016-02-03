@@ -52,13 +52,13 @@ def preBuild(site):
             # Build a context for each gallery site
             
             gallery_site_context = {}
+            gallery_site_context['page'] = page
             gallery_site_context['title'] = find('title')
             gallery_site_context['headline'] = find('headline')
             gallery_site_context['author'] = find('author')
             gallery_site_context['date'] = find('date')
             gallery_site_context['img_src'] = find('img_src')
             gallery_site_context['img_attr'] = find('img_attr')
-            gallery_site_context['path'] = '%s/%s' % (page.site.url or '', page.path)
 
             gallery_site_context['body'] = getNode(get_template(page.path), page.context(), name="body")
 
@@ -90,7 +90,7 @@ def preBuildPage(site, page, context, data):
     context['gallery_sites'] = GALLERY_SITES
 
     for gallery_site in GALLERY_SITES:
-        if gallery_site['path'] == page.path:
+        if gallery_site['page'].final_url == page.final_url:
             context.update(gallery_site)
 
     return context, data

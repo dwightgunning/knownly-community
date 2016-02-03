@@ -52,13 +52,13 @@ def preBuild(site):
             # Build a context for each guide
             
             guideContext = {}
+            guideContext['page'] = page
             guideContext['title'] = find('title')
             guideContext['headline'] = find('headline')
             guideContext['author'] = find('author')
             guideContext['date'] = find('date')
             guideContext['img_src'] = find('img_src')
             guideContext['img_attr'] = find('img_attr')
-            guideContext['path'] = '%s/%s' % (page.site.url or '', page.path)
 
             guideContext['body'] = getNode(get_template(page.path), page.context(), name="body")
 
@@ -90,7 +90,7 @@ def preBuildPage(site, page, context, data):
     context['guides'] = GUIDES
 
     for guide in GUIDES:
-        if guide['path'] == page.path:
+        if guide['page'].final_url == page.final_url:
             context.update(guide)
 
     return context, data

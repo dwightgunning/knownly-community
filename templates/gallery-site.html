@@ -52,7 +52,7 @@
 			<nav id="gallery-site-nav">
 				<span class="prev">
 					{% if prevgallerysites %}
-						<a href='/{{ prevgallerysites.path }}'>
+						<a href='{% prevgallerysites.page.final_url %}'>
 							<span class="arrow">&larr;</span> {{ prevgallerysites.title }}
 						</a>
 					{% endif %}
@@ -61,7 +61,7 @@
 
 				<span class="next">
 					{% if nextgallerysites %}
-						<a href='/{{ nextgallerysites.path }}'>
+						<a href='{% nextgallerysites.page.final_url %}'>
 							{{ nextgallerysites.title }} <span class="arrow">&rarr;</span>
 						</a>
 					{% endif %}
