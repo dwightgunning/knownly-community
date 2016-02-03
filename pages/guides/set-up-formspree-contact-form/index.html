@@ -22,7 +22,7 @@ img_attr: <a href="http://formspree.io/">Formspree</a></em>
 {% block body %}
 
 {% filter markdown:"fenced-code-blocks" %}
-There have been [many articles](https://www.mobomo.com/2014/01/static-web-rising/) saying static website are the [next big thing](https://www.smashingmagazine.com/2015/11/modern-static-website-generators-next-big-thing/). While it’s hard to quantify the rise of static websites, they do seem to be getting more popular. Any for good reason, too: they’re fast, they’re safe, and they’re increasingly easy to use and set up.
+There have been [many articles](https://www.mobomo.com/2014/01/static-web-rising/) saying static websites are the [next big thing](https://www.smashingmagazine.com/2015/11/modern-static-website-generators-next-big-thing/). While it’s hard to quantify the rise of static websites, they do seem to be getting more popular. Any for good reason, too: they’re fast, they’re safe, and they’re increasingly easy to use and set up.
 
 However, their greatest selling point—being static—can also be a problem when you want to do something dynamic: like adding a comments section, selling products, or even just setting up a simple contact form. Enter [formspree.io](http://formspree.io/). You can set your form’s action to submit to formspree, and they’ll handle the form submission and forward the form data to you by email. That makes it almost trivial to set up a contact form. In this post, I’ll walk through some of the steps to set up the comment form, using several popular static site generators.
 
@@ -34,7 +34,7 @@ First off, let’s create a contact page. If you’ve already done this, you can
 
 Using Pelican, it's as easy as creating or dropping a new file into the `content/pages` directory. Name the file `contact.md` and it will turn up in your pages as ‘contact’. Make sure you’ve installed support for markdown with `pip install markdown`! You could also use .rst or .html—the contact form itself will be html, which will work fine in markdown and html files. Give your new page the attributes you want, of which title is the only thing that’s required:
 
-```markdown
+```yaml
 Title: Contact
 Slug: contact
 Lang: en
