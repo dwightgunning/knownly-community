@@ -74,4 +74,4 @@ cactus serve
 
 ## License
 
-This content of this work is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License. The underlying source code used to format and display that content is licensed under the MIT License. These are set out in the [license statement]](../master/LICENSE.md).
+This content of this work is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License. The underlying source code used to format and display that content is licensed under the MIT License. These are set out in the [license statement](../master/LICENSE.md).
