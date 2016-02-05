@@ -6,7 +6,7 @@ article {
     display: inline-block;
     background: #f4f4f4;
     color: #999;
-    margin-bottom: 20px;
+    margin-bottom: 30px;
 
     p {
       margin: 0;
@@ -30,17 +30,16 @@ article {
     font-style: normal;
     font-size: 36px;
     line-height: 1.15;
-    letter-spacing: -0.02em;
     margin-bottom: 5px;
   }
 
   h2 {
     font-family: "Lucida Grande","Lucida Sans Unicode","Lucida Sans",Geneva,Verdana,sans-serif;
-    letter-spacing: -0.022em;
     font-weight: 300;
     font-style: normal;
     font-size: 28px;
     line-height: 1.22;
+    margin-top: 46px;
   }
 
   h2.headline {
@@ -50,16 +49,17 @@ article {
     font-weight: normal;
     font-style: italic;
     line-height: 1.5;
+    margin-top: 30px;
   }
 
   p {
     font-family: Georgia,Cambria,"Times New Roman",Times,serif;
-    letter-spacing: .01rem;
     font-weight: 400;
     font-style: normal;
-    font-size: 21px;
-    line-height: 1.58;
-    letter-spacing: -0.003em;
+    font-size: 18px;
+    line-height: 30px;
+    margin-top: 0px;
+    margin-botom: 30px;
   }
 
   p.small { 
@@ -99,6 +99,14 @@ article {
     line-height: 28px;
     margin-bottom: 10px;
     margin-left: 20px;
+  }
+
+  .codehilite {
+    margin-bottom: 37.5px;
+
+    pre {
+      margin-bottom: 0px;
+    }
   }
 
   table {
