@@ -14,27 +14,29 @@ img_attr: <a href="https://www.nownownow.com">nownownow.com</a></em>
 
 {% block body %}
 {% filter markdown:"fenced-code-blocks" %}
-_Now pages_ are a neat initiative started by [Greg Albritton](http://gregalbritton.com/now) and [Derek Sivers](https://sivers.org/now). They are a simple variation on the ubiquitous 'about' and 'contact' pages you see all over the web. The point of the 'now' page is to share what you're focussed on right now, at this stage of your life.
+_Now pages_ are a neat initiative started by [Greg Albritton](http://gregalbritton.com/now) and [Derek Sivers](https://sivers.org/now). They are a simple variation on the ubiquitous 'about' and 'contact' pages you see all over the web. The point of the 'now' page is to share what you're focused on right now, at this stage of your life.
 
 For more of back-story and aims of the project, feel free to jump over to [nownownow.com](http://www.nownownow.com).
 
-This guide is written for folks who've never created a webpage from scratch but are keen to do so. It's just six simple steps that will take roughly 15 minutes.
+This guide is written for folks who've never created a webpage from scratch but are keen to do so. It's just five simple steps that will take roughly fifteen minutes.
 
 _If you're already up and running with Knownly, feel free to skip to [Step 4](#now-page-template) and grab our 'now' page template._
 
 ## 1. Sign up and install Dropbox
 
-First up you'll need to sign up for a Dropbox account and install the app. This will allow you to work on your website on your laptop and the Dropbox app will take care of sending your files to Dropbox in the cloud. With your website files in Dropbox, Knownly can make them accessible as a website.
+First up you'll need to sign up for a Dropbox account and install the app. This will allow you to work on your website on your laptop, or PC, and the Dropbox app will take care of sending your files up to the cloud. With your website files in the Dropbox cloud, Knownly can access them and make them accessible as a website.
 
 Just head over to [Dropbox](https://www.dropbox.com) to register.
 
-After you have your Dropbox account, you'll want to install the Dropbox app on your laptop or PC. Instructions should show up immediately after you register, but in case they don't, here's a [direct link](https://www.dropbox.com/install).
+After you have your Dropbox account, you'll want to install the Dropbox app on your laptop or PC. The [instructions](https://www.dropbox.com/install) should show up immediately after you register.
 
 ## 2. Register with Knownly
 
-Knownly registration is simple:  All you'll be asked to do is to grant the Knownly service permission to setup a new area within your Dropbox. This is where you can create a website folder that will hold your _now_ page. Once you've authorized Dropbox, the final step is to select your Knownly plan. Now you're up and running!
+Knownly registration is simple. All you'll be asked to do is to grant the Knownly service permission to setup a new area within your Dropbox. This is where you can create a website folder that will hold your _now_ page.
 
-Go <a href="https://www.knownly.net/signup" target="_blank">do it</a>.
+Once you've authorized Dropbox, the final step is to select your Knownly plan. Now you're up and running!
+
+<a href="https://www.knownly.net/signup" target="_blank">Go for it</a>!
 
 ## 3. Create a Knownly Website
 
@@ -52,20 +54,17 @@ You can type your chosen website domain into your web browser and this HTML page
 
 ## <a name="now-page-template"></a>4. Add the 'now' page template
 
-As you'll expect, we need to do some extra work to create a new 'now' page.
+Following the 'now' page convention, we need to create a page that will be accessible from a url that looks like: _http://mysite.knownly.net____/now/___
 
-To follow the 'now' page convention, we need to creat a page that will be accessible from a url that looks like: _http://mysite.knownly.net/now/_
+Knownly sites, like many websites, treat URLs that end in a '/' as a shorthand for the 'index.html' file in the corresponding sub-directory. Whenever visitors use a URL that ends in '/', Knownly will serve up the file named 'index.html' in that directory.
 
-Knownly sites, like many websites, treat URLs that end in a '/' as a shorthand for the 'index.html' in the corresponding directory. This is often simply referred to as the "index" file for a website or website sub-directory. Whenever visitors use a URL that ends in '/', Knownly will look for and serve the file named 'index.html' in that directory.
+First, create a sub-folder named 'now' within your Knownly website folder. It should sit along side the placeholder 'index.html' that was automatically generated for the website. Then, inside the 'now' folder create a new file called index.html.
 
 !['now' sub-directory and index.html ]({% static '/guides/nownownow/img/now_page_folder_structure.png' %} "Website structure")
 
-Now on to creating your now page:
 
-1. Create a sub-folder named 'now' within your Knownly website folder. It should sit along side the placeholder 'index.html' that was automatically generated for the website.
-2. Inside the 'now' folder, create a new file called index.html
-3. Add the HTML template (shown just below) so you can quickly test out your 'now' page
-4. Check that you can view your new 'now' page in your browser at: _http://mysite.knownly.net/now/_
+Copy the following HTML template into the 'index.html' file and fill in the blanks.
+
 
 ```html
 <html>
@@ -90,19 +89,17 @@ Now on to creating your now page:
 </html>
 ```
 
-Styling your 'now' page with CSS is the logical next step. That's a topic worthy of a separate guide (several guides in fact). Right now, the best place to learn CSS is Codecademy's [HTML & CSS course](https://www.codecademy.com/en/tracks/htmlcss). Be sure to check it out some time.
+Check that you can view your new 'now' page at: _http://mysite.knownly.net/now/_
 
-## 5. Fill in what you're up to right now
+From there, styling your 'now' page with CSS is the logical next step. That's a topic worthy of a separate guide (several guides in fact). Right now, the best place to learn CSS is Codecademy's [HTML & CSS course](https://www.codecademy.com/en/tracks/htmlcss). Be sure to check it out some time.
 
-This part is really up to you ;)
-
-## 6. Submit your 'now' page to the listing
+## 5. Submit your 'now' page to the listing
 
 To have your 'now' page listed, just follow the [simple instructions](http://nownownow.com/about#hownow):
 
 > If you already have your own website with a /now page on it, as described and defined above, just email the URL to me at <derek@sivers.org>. After you do, I’ll email you back with a link to log in and answer a few questions, which, when done, will create a profile page for you.
 
-Don't forget to spread the word on Facebook, Twitter and emailing!
+Don't forget to spread the word on Facebook, Twitter and emailing your friends!
 
 ## Wrapping up
 
