@@ -147,28 +147,6 @@ h6 {
   border-bottom: 1px solid #eee;
 }
 
-#post-meta {
-  font-size: 13px;
-  font-weight: bold;
-  line-height: 1.4;
-  border-top: 1px solid #eee;
-  padding-top: 20px;
-  margin-bottom: 20px;
-  margin-top: 20px;
-  color:#444;
-}
-
-#post-meta div span {
-  color: #aaa;
-  font-weight: 500;
-  display: block;
-}
-
-#post-meta div {
-  margin: 0 25px 0 0;
-  float: left;
-}
-
 /* Post Navigation */
 #post-nav {
   border-top:1px solid #eee;
@@ -262,7 +240,6 @@ h2.month {
   #footer { margin-top: 60px; }
 
   .post-list, #archive-list { margin-top: 0; }
-  #post-meta { margin-top: 20px; }
 
   #title { font-size: 17px; }
   .post-list .dates { display: none; }

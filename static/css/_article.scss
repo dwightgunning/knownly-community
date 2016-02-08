@@ -59,7 +59,7 @@ article {
     font-size: 18px;
     line-height: 30px;
     margin-top: 0px;
-    margin-botom: 30px;
+    margin-bottom: 30px;
   }
 
   p.small { 
@@ -156,23 +156,45 @@ article {
     border-radius: 3px;
   }
 
-  .sharing {
-    float: right;
-    margin: -2px;
   }
 
-  .sharing a {
-    font-size: 20px;
-    font-size: 23px;
-    margin-left: 1px;
-    margin-top: 4px;
-    color: $primary;
-    display: inline-block;
-    vertical-align: middle;
-  }
+  #article-meta {
+    font-size: 13px;
+    font-weight: bold;
+    line-height: 1.4;
+    border-top: 1px solid #eee;
+    padding-top: 20px;
+    margin-bottom: 20px;
+    margin-top: 20px;
+    color:#444;
 
-  .sharing a:hover {
-    color: $primary-dark;
-  }
+    .details {
+      margin: 0 25px 0 0;
+      float: left;
 
+      span {
+        color: #aaa;
+        font-weight: 500;
+        display: block;
+      }
+    }
+
+    .sharing {
+      float: right;
+      margin: -2px;
+
+      a {
+        font-size: 20px;
+        font-size: 23px;
+        margin-left: 1px;
+        margin-top: 4px;
+        color: $primary;
+        display: inline-block;
+        vertical-align: middle;
+      }
+
+      a:hover {
+        color: $primary-dark;
+      }
+    }
 }

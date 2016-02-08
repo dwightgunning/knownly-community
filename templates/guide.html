@@ -28,10 +28,13 @@
         {% endblock body %}
       </section>
 
-      <div id="guides-meta" class="clearfix">
-        <div><span>Published on </span> {{ date }}</div>
-        <div><span>Written by</span> {{ author }}</div>
-
+      <div id="article-meta" class="clearfix">
+        <div class="details">
+          <span>Published on </span> {{ date|date }}
+        </div>
+        <div class="details">
+          <span>Written by</span> {{ author }}
+        </div>
         <div class="sharing">
           <a class="twitter" href="https://twitter.com/share" target="blank"><span class="fa fa-2x fa-twitter"></span></a>
           <a class="facebook" href="#" onclick="
@@ -43,6 +46,7 @@
           </a>
         </div>
       </div>
+      <div class="alert alert-info">Keen to try out what you've learned? Sign up to <strong><a href="https://www.knownly.net/signup/">Knownly for free</a></strong> and give it a shot!</div>
     </article>
   </div>
 </div>

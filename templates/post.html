@@ -28,23 +28,26 @@
 				{% endblock body %}
 			</section>
 			
-			<div id="post-meta" class="clearfix">
-				<div><span>Posted on </span> {{ date }}</div>
-				<div><span>Written by</span> {{ author }}</div>
-
-				<section class="sharing">
-					<a class="twitter" href="https://twitter.com/share" target="blank"><span class="fa fa-2x fa-twitter"></span></a>
-
-					<a class="facebook" href="#" 
-					  onclick="
-					    window.open(
-					      'https://www.facebook.com/sharer/sharer.php?u='+encodeURIComponent(location.href), 
-					      'facebook-share-dialog', 
-					      'width=626,height=436'); 
-					    return false;"><span class="fa fa-2x fa-facebook"></span> 
+			<div id="article-meta" class="clearfix">
+				<div class="details">
+					<span>Posted on </span> {{ date|date }}
+				</div>
+				<div class="details">
+					<span>Written by</span> {{ author }}
+				</div>
+				<div class="sharing">
+					<a class="twitter" href="https://twitter.com/share" target="blank">
+						<span class="fa fa-2x fa-twitter"></span>
 					</a>
-
-				</section> 
+					<a class="facebook" href="#" 
+						onclick="
+							window.open(
+								'https://www.facebook.com/sharer/sharer.php?u='+encodeURIComponent(location.href), 
+								'facebook-share-dialog', 
+								'width=626,height=436'); 
+							return false;"><span class="fa fa-2x fa-facebook"></span> 
+					</a>
+				</div> 
 			</div> 
 		</article>
 
