@@ -4,8 +4,8 @@
 {% block description %}{{ headline }}{% endblock %}
 {% block author %}{{ author }}{% endblock %}
 {% block og_title %}{{ title }}{% endblock %}
-{% block og_image %}{% static img_src %}{% endblock %}
 {% block og_description %}{{ headline }}{% endblock %}
+{% block og-image %}<meta property="og:image" content="{% static img_src %}" />{% endblock %}
 
 {% block content %}
 <div class="div col-md-8 col-md-offset-2">
