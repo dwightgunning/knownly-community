@@ -1,3 +1,3 @@
-git+https://github.com/Knownly/Cactus.git@master#egg=Cactus
+git+https://github.com/Knownly/Cactus.git@knownly-community#egg=Cactus
 Pygments==2.1
 pyScss==1.3.4
