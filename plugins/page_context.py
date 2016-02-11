@@ -10,7 +10,8 @@ def preBuildPage(page, context, data):
 
     extra = {
         "CURRENT_PAGE": page,
-        "MIXPANEL_TOKEN": page.site.config.get('mixpanel-token', '')
+        "MIXPANEL_TOKEN": page.site.config.get('mixpanel-token', ''),
+        "GA_TRACKING_ID": page.site.config.get('ga-tracking-id', '')
         # Add your own dynamic context elements here!
     }
 
