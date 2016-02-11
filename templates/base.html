@@ -12,7 +12,7 @@
     <!-- Open Graph tags -->
     <meta property="og:title" content="{% block og_title %}Knownly Community{% endblock %}" />
     <meta property="og:type" content="website" />
-    <meta property="og:image" content="{% static 'img/brand/Knownly_Logo_Bubble_Device_255_x_255.png' %}" />
+    <meta property="og:image" content="{% block og_image %}{% static 'img/brand/Knownly_Logo_Bubble_Device_255_x_255.png' %}{% endblock %}" />
     <meta property="og:url" content="https://www.knownly.net/community{% current_page %}" />
     <meta property="og:description" content="{% block og_description %}Get started, learn and teach, grow together.{% endblock %}" />
     <meta property="og:locale" content="en_US" />
