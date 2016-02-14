@@ -48,7 +48,31 @@
         </div>
       </div>
       <div class="alert alert-info">Keen to try out what you've learned? Sign up to <strong><a href="https://www.knownly.net/signup/">Knownly for free</a></strong> and give it a shot!</div>
+
+      <div id="disqus_thread"></div>
+
     </article>
   </div>
 </div>
 {% endblock content %}
+
+{% block js_footer %}
+  <script>
+    var disqus_config = function () {
+      this.page.url = '{% url page.final_url %}';
+      this.page.identifier = '/{{ page.path }}';
+      this.page.title = 'Knownly Community Guide: {{ title }}';
+    };
+
+    (function() { // DON'T EDIT BELOW THIS LINE
+    var d = document, s = d.createElement('script');
+
+    s.src = '//{{ DISQUS_SHORTNAME }}.disqus.com/embed.js';
+
+    s.setAttribute('data-timestamp', +new Date());
+    (d.head || d.body).appendChild(s);
+    })();
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+  {{ block.super }}
+{% endblock %}

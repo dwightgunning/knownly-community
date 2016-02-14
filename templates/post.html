@@ -1,6 +1,6 @@
 {% extends "base.html" %}
 
-{% block title %}{{ title }} | Guides | Knownly Community{% endblock %}
+{% block title %}{{ title }} | Blog | Knownly Community{% endblock %}
 {% block description %}{{ headline }}{% endblock %}
 {% block author %}{{ author }}{% endblock %}
 {% block og_title %}{{ title }}{% endblock %}
@@ -70,8 +70,33 @@
 					{% endif %}
 				</span>
 			</nav>
+
+			<div id="disqus_thread"></div>
+
 		</div>
 	</div>
+
 </div>
 
 {% endblock content %}
+
+{% block js_footer %}
+  <script>
+    var disqus_config = function () {
+      this.page.url = '{% url page.final_url %}';
+      this.page.identifier = '{{ page.path }}';
+      this.page.title = 'Knownly Community Blog: {{ title }}';
+    };
+
+    (function() { // DON'T EDIT BELOW THIS LINE
+    var d = document, s = d.createElement('script');
+
+    s.src = '//{{ DISQUS_SHORTNAME }}.disqus.com/embed.js';
+
+    s.setAttribute('data-timestamp', +new Date());
+    (d.head || d.body).appendChild(s);
+    })();
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+  {{ block.super }}
+{% endblock %}
