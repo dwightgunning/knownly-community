@@ -7,6 +7,7 @@
 
 {% block content %}
 <h1>Knownly Guides</h1>
+  {% autoescape off %}{{ data|default:"<pre><div><b>hello code</b></div></pre>"|force_escape }}{% endautoescape %}
   {% for guide in guides %}
     {% if forloop.first %}<div class="row">{% endif %}
     <div class="col-xs-12 col-sm-6 col-md-3 guide-thumbnails">
