@@ -1,3 +1,8 @@
 {
-  
+  "site-url": "http://community.knownly.net",
+  "mixpanel-token": "fcc0afbb8df039f3a8eb8f7fad3bf5a3",
+  "ga-tracking-id": "UA-70922512-1",
+  "website-folder": "/users/dwight/Dropbox/Apps/Knownly.net/community.knownly.net",
+  "provider": "filesystem",
+  "disqus-shortname": "knownly"
 }

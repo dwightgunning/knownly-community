@@ -1,0 +1,79 @@
+title: Disqus Comments
+author: Dwight Gunning
+date: 11-02-2016
+headline: Add comments to your blog, gallery or portfolio
+img_src: guides/disqus-comments/img/disqus-logo.png
+img_attr: <a href="https://disqus.com">Disqus.com</a></em>
+
+{% extends "guide.html" %}
+
+{% block css_head %}
+  {{ block.super }}
+  <link href="{% static '/css/zenburn.css' %}" rel="stylesheet">
+{% endblock %}
+
+{% block body %}
+
+{% filter markdown:"fenced-code-blocks" %}
+Weblogs and a comments have gone hand in hand since the early days of the blogosphere. They provide readers the ability to respond with their agreement, an objection or some tangental idea. They're a great addition to many websites.
+
+In the simplest case, a quick comment can provide feedback or validation from a member of your audience. Over time and with some cultivation, the comments system on a blog or informational website can evolve into a vibrate community. This sort of engagement with, and amongst your website's visitors is great no matter what the goal is for your website.
+
+Disqus is a service that provides embeddable comment and discussion software which is perfect for static websites. It's free to use on as many pages or websites as you like. Premium tools are offerred to serious publishers for a price.
+
+In this guide we'll look at how to embed Disqus comments on a Knownly website.
+
+## 1. Signup and login in to Disqus
+
+If you've ever commented on another blog or website using Disqus, then you'll already have a Disqus account that's good for adding comments to your own website. Just [log in](https://disqus.com/profile/login/) and jump to step two.
+
+![Log in to Disqus]({% static '/guides/disqus-comments/img/disqus-login.png' %} "Disqus log in form")
+
+If you do need to sign up, fear not as it is very easy. Disqus only ask for a username and password or you a social authentication with Facebook, Twitter or Google.
+
+## 2. Add a Disqus comments to your website
+
+After logging in, Disqus displays a personalised use homepage that combines comments, content from other sites, and the adminstration features you'll need to add comments to your own website.
+
+To start the quick wizard that will setup comments for your site, hit the gear icon in the top right and choose "Add Disqus to site".
+
+![Click the Disqus gear menu and choose "Add Disqus to site"]({% static '/guides/disqus-comments/img/disqus-gear-menu.png' %} "Disqus gear menu")
+
+
+ Disqus are marketing their comment system as a product called "Engage" so the wizard begins with a brief explaination. Click the button "Start using engage" which will take you through to the form ([direct link](https://disqus.com/admin/create/)) that will setup a unique identifer for your website comment system.
+
+![Enter a name and choose a URL for your the website's commenting community]({% static '/guides/disqus-comments/img/disqus-site-setup.png' %} "")
+
+## 3. Get the embed code and paste it into your page
+
+Like most static website integrations, you'll be working with a Javascript snippet to embed the Disqus service into your website. Your job is to place this code, into the HTML source of your website, in the spot where you'd like the comment thread to appear.
+
+Remember it'll start out with a short vertical height but will expand as people start to leave messages on your page.
+
+![Choose the Universal Code option and copy/paste the snippet]({% static '/guides/disqus-comments/img/disqus-universal-code.png' %} "Disqus universal code snippet")
+
+The code snippet has a couple of important fields to be aware of:
+
+* ```PAGE_URL```
+* ```PAGE_IDENTIFIER```
+
+Blog posts are probably the most common place to put comments and typically the comments will relate to that specific post. In this case you can leave the above fields commented out and the Disqus snippet will automatically create a separate comment threads for each post.
+
+On the other hand, if you have a more general portfolio or product webpage, you may wish to have the same comment thread appear on multiple pages. In this case you'll need to uncomment the above and set an appropriate default URL (whichever is most generally applicable; often known as a "canonical" URL) and an identifier for the comment thread. Disqus will then link all pages with the same URL and Identifer to display a unified comment thread.
+
+Once the snippet is pasted and you have made any optional adjustments, you should be able to view your page and check that the Disqus comments thread appears. If not, try using your Browser "developer tools" to check for and resolve any Javascript errors that may be causing the snippet to malfunction.
+
+## 4. Customise the appearance
+
+Head back to your Disqus user homepage and your site's comment system will be listed on the right-hand side. Click the "Manage" button. This page brings together all the administrative functionality for your site's comments. To begin with we're interested in fine tuning the appearance so hit "Edit settings".
+
+Take a look through the "basic" section. It's also worthwhile completing the Site Identity and Community Rules pages.
+
+## 5. Monitor and administer your community
+
+Now that you're comments are up and running it's time to cultivate your community. Take a few moments to familiarise yourself with the Disqus admin tools as this is where you can moderate comments and reply to the messages left by your readers.
+
+And that's it. Happy commenting!
+
+{% endfilter %}
+{% endblock %}
